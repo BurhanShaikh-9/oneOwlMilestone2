@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import BodyComponent from '../../components/bodyComponent';
 import profileImg from '../../../assets/images/guy.png'
 import { BsFillChatDotsFill, BsFillCameraVideoFill, BsTelephoneFill } from 'react-icons/bs'
-import { AiFillEdit, AiOutlinePlus } from 'react-icons/ai';
+import { AiFillEdit, AiOutlineClose, AiOutlineDelete, AiOutlinePlus } from 'react-icons/ai';
 import ReactPaginate from 'react-paginate';
 // import profileImg from '../../../assets/images/guy.png'
 
@@ -10,7 +10,24 @@ export const Privacy = () => {
 
     const [currentPage, setCurrentPage] = useState(0); // Current page state
     const perPage = 6; // Number of items per page
-    const data = Array.from({ length: 30 }, (_, index) => `Item ${index + 1}`); // Sample data array
+    // const data = Array.from({ length: 30 }, (_, index) => `Item ${index + 1}`); // Sample data array
+    const [data, setData] = useState([
+        { id: 1, username: "Agent Name 1" },
+        { id: 2, username: "Agent Name 2" },
+        { id: 3, username: "Agent Name 3" },
+        { id: 4, username: "Agent Name 4" },
+        { id: 5, username: "Agent Name 5" },
+        { id: 6, username: "Agent Name 6" },
+        { id: 7, username: "Agent Name 7" },
+        { id: 8, username: "Agent Name 8" },
+        { id: 9, username: "Agent Name 9" },
+        { id: 10, username: "Agent Name 10" },
+        { id: 11, username: "Agent Name 11" },
+        { id: 12, username: "Agent Name 12" },
+
+    ])
+
+
 
     // Function to handle page change
     const handlePageChange = (selectedPage) => {
@@ -29,6 +46,22 @@ export const Privacy = () => {
         const newIsEditArray = [...isEditArray];
         newIsEditArray[index] = !newIsEditArray[index];
         setIsEditArray(newIsEditArray);
+    };
+
+    const handleDelete = (id) => {
+        const updatedData = data.filter((item) => item.id !== id);
+        setData(updatedData);
+    };
+
+
+
+
+    const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+    const openLogoutModal = () => {
+        setIsPrivacyOpen(true);
+    };
+    const closeLogoutModal = () => {
+        setIsPrivacyOpen(false);
     };
 
     return (
@@ -57,7 +90,7 @@ export const Privacy = () => {
                                                                 <div className="privacyAgentCol">
                                                                     <img src={profileImg} alt="" />
                                                                     <p>
-                                                                        Agent Name
+                                                                        {item.username}
                                                                     </p>
                                                                 </div>
                                                             </td>
@@ -80,7 +113,7 @@ export const Privacy = () => {
                                                                 </div>
                                                             </td>
                                                             <td>
-                                                                <button className='editColumn'> <AiFillEdit />  </button>
+                                                                <button className='editColumn' onClick={() => handleDelete(item.id)}> <AiOutlineDelete />  </button>
                                                             </td>
                                                         </tr>
                                                     ))}
@@ -98,8 +131,6 @@ export const Privacy = () => {
                                             containerClassName={'pagination'}
                                             activeClassName={'active'}
                                         />
-
-
 
                                     </div>
                                 </div>
@@ -171,7 +202,7 @@ export const Privacy = () => {
                                                 <AiOutlinePlus />
                                             </div> */}
                                         </div>
-                                        <button className='showMoreButton'>Show more</button>
+                                        {/* <button className='showMoreButton'>Show more</button> */}
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +225,7 @@ export const Privacy = () => {
                                                 <AiOutlinePlus />
                                             </div> */}
                                         </div>
-                                        <button className='showMoreButton'>Show more</button>
+                                        {/* <button className='showMoreButton'>Show more</button> */}
                                     </div>
                                 </div>
                             </div>
@@ -217,18 +248,104 @@ export const Privacy = () => {
                                                 <AiOutlinePlus />
                                             </div> */}
                                         </div>
-                                        <button className='showMoreButton'>Show more</button>
+                                        {/* <button className='showMoreButton'>Show more</button> */}
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="rightSidePrivacyCoLbutton">Show Complete List</div>
+                            <button onClick={openLogoutModal} className="rightSidePrivacyCoLbutton">Show Complete List</button>
                         </div>
 
                     </div>
 
                 </div>
             </BodyComponent>
+
+            {
+                isPrivacyOpen &&
+                <dialog id='privacyModal' className='modalLogout' open >
+                    <div className="modalLogoutMain">
+
+                        <button className='modalLogoutButton' onClick={closeLogoutModal}>
+                            <AiOutlineClose />
+                        </button>
+
+                            <div className="cardListingComplete">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <div className="agentNamePrivacy">
+                                            <label htmlFor="">Agent Name</label>
+                                            <span>$456</span>
+                                        </div>
+                                        <p className='agentNamePara'>basic Info:</p>
+                                        <p className='agentNamePara'>Channels: live chat, video call, voice call</p>
+                                        <p className='agentNamePara'>Customers Interacted with</p>
+                                        <div className='usersPrivacyOuter'>
+
+                                            <div className='usersPrivacy'>
+                                                <img src={profileImg} alt="" />
+                                                <img src={profileImg} alt="" />
+                                                <img src={profileImg} alt="" />
+                                                {/* <div className="svgPrivacy">
+                                                <AiOutlinePlus />
+                                            </div> */}
+                                            </div>
+                                            {/* <button className='showMoreButton'>Show more</button> */}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card">
+                                    <div className="card-body">
+                                        <div className="agentNamePrivacy">
+                                            <label htmlFor="">Agent Name</label>
+                                            <span>$456</span>
+                                        </div>
+                                        <p className='agentNamePara'>basic Info:</p>
+                                        <p className='agentNamePara'>Channels: live chat, video call, voice call</p>
+                                        <p className='agentNamePara'>Customers Interacted with</p>
+                                        <div className='usersPrivacyOuter'>
+
+                                            <div className='usersPrivacy'>
+                                                <img src={profileImg} alt="" />
+                                                <img src={profileImg} alt="" />
+                                                <img src={profileImg} alt="" />
+                                                {/* <div className="svgPrivacy">
+                                                <AiOutlinePlus />
+                                            </div> */}
+                                            </div>
+                                            {/* <button className='showMoreButton'>Show more</button> */}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card">
+                                    <div className="card-body">
+                                        <div className="agentNamePrivacy">
+                                            <label htmlFor="">Agent Name</label>
+                                            <span>$456</span>
+                                        </div>
+                                        <p className='agentNamePara'>basic Info:</p>
+                                        <p className='agentNamePara'>Channels: live chat, video call, voice call</p>
+                                        <p className='agentNamePara'>Customers Interacted with</p>
+                                        <div className='usersPrivacyOuter'>
+
+                                            <div className='usersPrivacy'>
+                                                <img src={profileImg} alt="" />
+                                                <img src={profileImg} alt="" />
+                                                <img src={profileImg} alt="" />
+                                                {/* <div className="svgPrivacy">
+                                                <AiOutlinePlus />
+                                            </div> */}
+                                            </div>
+                                            {/* <button className='showMoreButton'>Show more</button> */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                </dialog>
+            }
         </React.Fragment>
+
     )
 }

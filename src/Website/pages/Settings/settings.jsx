@@ -1,7 +1,11 @@
 import React from 'react'
 import BodyComponent from '../../components/bodyComponent'
+import { DarkMode } from '../../../services/darkMode';
 
-export const Settings = () => {
+export const Settings = ({getThemeColor, isDarkMode}) => {
+    const {setDarkMode, getDarkMode} = DarkMode(); 
+    const darkMode = getDarkMode();
+
     return (
         <React.Fragment>
             <BodyComponent>
@@ -59,9 +63,10 @@ export const Settings = () => {
                             use the system settings to enable dark theme
                             </div>
                         </div>
+                     
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox" />
+                                <input type="checkbox" checked={darkMode} onChange={(e)=>{getThemeColor(e.target.checked ? true : false), setDarkMode(e.target.checked ? true : false)}}/>
                                 <span className="slider round"></span>
                             </label>
                         </div>

@@ -34,12 +34,117 @@ const Prefernce = () => {
         { agentImage: ProfileImg, agentName: 'agent18' },
     ])
 
+
+
+    const [data, setData] = useState([
+        { username: 'agent 1', channel: 'channel 11', date: '7 July 2023', time: '07:00 PM', duration: '01:54:89' },
+        { username: 'agent 2', channel: 'channel 22', date: '8 July 2023', time: '08:00 PM', duration: '01:54:89' },
+        { username: 'agent 3', channel: 'channel 33', date: '9 July 2023', time: '09:00 PM', duration: '01:54:89' },
+        { username: 'agent 4', channel: 'channel 44', date: '10 July 2023', time: '10:00 PM', duration: '01:54:89' },
+        { username: 'agent 5', channel: 'channel 55', date: '11 July 2023', time: '11:00 PM', duration: '01:54:89' },
+        { username: 'agent 6', channel: 'channel 66', date: '12 July 2023', time: '12:00 PM', duration: '01:54:89' },
+        { username: 'agent 7', channel: 'channel 77', date: '13 July 2023', time: '01:00 AM', duration: '01:54:89' },
+        { username: 'agent 8', channel: 'channel 88', date: '14 July 2023', time: '02:00 AM', duration: '01:54:89' },
+        { username: 'agent 9', channel: 'channel 99', date: '15 July 2023', time: '03:00 AM', duration: '01:54:89' },
+        { username: 'agent 10', channel: 'channel 10', date: '16 July 2023', time: '04:00 AM', duration: '01:54:89' },
+        { username: 'agent 11', channel: 'channel 1', date: '17 July 2023', time: '04:00 AM', duration: '01:54:89' },
+        { username: 'agent 12', channel: 'channel 2', date: '18 July 2023', time: '06:00 AM', duration: '01:54:89' },
+        { username: 'agent 13', channel: 'channel 3', date: '19 July 2023', time: '07:00 AM', duration: '01:54:89' },
+        { username: 'agent 14', channel: 'channel 4', date: '20 July 2023', time: '08:00 AM', duration: '01:54:89' },
+        { username: 'agent 15', channel: 'channel 5', date: '21 July 2023', time: '08:00 AM', duration: '01:54:89' },
+        { username: 'agent 16', channel: 'channel 6', date: '22 July 2023', time: '09:00 AM', duration: '01:54:89' },
+        { username: 'agent 17', channel: 'channel 7', date: '23 July 2023', time: '03:00 AM', duration: '01:54:89' },
+        { username: 'agent 18', channel: 'channel 8', date: '24 July 2023', time: '06:00 AM', duration: '01:54:89' },
+        { username: 'agent 19', channel: 'channel 9', date: '25 July 2023', time: '09:00 AM', duration: '01:54:89' },
+        { username: 'agent 20', channel: 'channel 12', date: '26 July 2023', time: '01:00 AM', duration: '01:54:89' },
+    ])
+
+    const sortByChannel = () => {
+        const sortedData = [...data].sort((a, b) => {
+            // Extract the numeric part from the channel names
+            const channelA = parseInt(a.channel.split(" ")[1]);
+            const channelB = parseInt(b.channel.split(" ")[1]);
+
+            // Compare the numeric parts
+            return channelA - channelB;
+        });
+        setData(sortedData);
+    };
+
+    const sortByDate = () => {
+        const sortedData = [...data].sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+    
+            // Compare the dates
+            if (dateA < dateB) return -1;
+            if (dateA > dateB) return 1;
+            return 0;
+        });
+    
+        setData(sortedData);
+    };
+    const sortByAgentName = () => {
+        const sortedData = [...data].sort((a, b) => {
+            // Extract numeric part of agent names
+            const agentNumberA = parseInt(a.username.match(/\d+/)[0]);
+            const agentNumberB = parseInt(b.username.match(/\d+/)[0]);
+    
+            // Compare numeric parts
+            return agentNumberA - agentNumberB;
+        });
+    
+        setData(sortedData);
+    };
+
     const [searchTerm, setSearchTerm] = useState('');
 
     // Function to filter agents based on search term
     const filteredAgents = agentList.filter((agent) =>
         agent.agentName.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const [isFilters, setIsFilters] = useState(false)
+
+
+
+
+    const sortByTime = () => {
+        const sortedData = [...data].sort((a, b) => {
+            const timeA = a.time;
+            const timeB = b.time;
+    
+            // Convert time strings to 24-hour format for comparison
+            const timeA24 = convertTo24HourFormat(timeA);
+            const timeB24 = convertTo24HourFormat(timeB);
+    
+            // Compare the times
+            if (timeA24 < timeB24) return -1;
+            if (timeA24 > timeB24) return 1;
+            return 0;
+        });
+    
+        setData(sortedData);
+    };
+    
+    // Function to convert time to 24-hour format
+    const convertTo24HourFormat = (time) => {
+        const [timePart, amPm] = time.split(' ');
+        const [hour, minute] = timePart.split(':');
+        let hour24 = parseInt(hour);
+    
+        if (amPm.toLowerCase() === 'pm') {
+            if (hour24 !== 12) {
+                hour24 += 12;
+            }
+        } else {
+            if (hour24 === 12) {
+                hour24 = 0;
+            }
+        }
+    
+        return `${hour24.toString().padStart(2, '0')}:${minute}`;
+    };
 
     return (
         <React.Fragment>
@@ -174,19 +279,26 @@ const Prefernce = () => {
                                             <div className="preferenceHeading">
                                                 <p className='mainHeadingPreferenceTable'>Conversation Summary Details</p>
                                                 <div className='preferenceRight'>
-                                                    <button className='filterButton'>
+                                                    <button className='filterButton' onClick={() => setIsFilters(!isFilters)}>
                                                         <img src={filterSvg} alt="" />
                                                         <span>Filters</span>
+                                                        {
+                                                            isFilters &&
+                                                            <div className="filterMenu">
+                                                                <button onClick={sortByAgentName}>Agents</button>
+                                                                <button onClick={sortByTime}>Time</button>
+                                                            </div>
+                                                        }
                                                     </button>
-                                                    <button>
+                                                    <button onClick={sortByChannel}>
                                                         Channels
                                                     </button>
-                                                    <button>
+                                                    <button onClick={sortByDate}>
                                                         date
                                                     </button>
-                                                    <button>
+                                                    {/* <button>
                                                         Type
-                                                    </button>
+                                                    </button> */}
                                                 </div>
                                             </div>
 
@@ -203,92 +315,18 @@ const Prefernce = () => {
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                          
-                                                           
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Agent Name</td>
-                                                                <td>Live Chat</td>
-                                                                <td>7 July 2023</td>
-                                                                <td>07:00 PM</td>
-                                                                <td>01:54:89</td>
-                                                            </tr>
+                                                            {data.map((item, keyId) => (
+
+
+                                                                <tr key={keyId}>
+                                                                    <td>{item.username}</td>
+                                                                    <td>{item.channel}</td>
+                                                                    <td>{item.date}</td>
+                                                                    <td>{item.time}</td>
+                                                                    <td>{item.duration}</td>
+                                                                </tr>
+
+                                                            ))}
 
                                                         </tbody>
                                                     </table>
@@ -315,12 +353,15 @@ const Prefernce = () => {
                                         onChange={(e) => setSearchTerm(e.target.value)} />
                                 </div>
                                 <ul className='agentList agentPreference'>
-                                {filteredAgents.map((item, keyId) => (
+                                    {filteredAgents.map((item, keyId) => (
                                         <li key={keyId}>
-                                        <img src={item.agentImage} alt="" />
-                                        <p>{item.agentName}</p>
-                                    </li>
-                                ))}
+                                            <button>
+
+                                                <img src={item.agentImage} alt="" />
+                                                <p>{item.agentName}</p>
+                                            </button>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
