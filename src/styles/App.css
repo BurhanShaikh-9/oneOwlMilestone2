@@ -1,4 +1,4 @@
-* {
+** {
   margin: 0;
   padding: 0;
 }
@@ -39,6 +39,13 @@ a {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.mainSectionWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .profileDropDown button:hover {
@@ -83,6 +90,56 @@ a {
   width: 100%;
   height: 130px;
   border-radius: 0 0 50px 50px;
+}
+
+.agentNamePrivacy {
+  display: flex;
+  justify-content: space-between;
+}
+.agentNamePrivacy label {
+  font-size: 22px;
+}
+.agentNamePrivacy span {
+  color: #0B2360;
+  text-align: right;
+  font-size: 40px;
+}
+
+.usersPrivacyOuter {
+  display: flex;
+  justify-content: space-between;
+}
+.usersPrivacyOuter .usersPrivacy {
+  display: flex;
+  gap: 10px;
+}
+.usersPrivacyOuter .usersPrivacy img {
+  height: 30px;
+  width: 30px;
+}
+.usersPrivacyOuter .usersPrivacy .svgPrivacy {
+  color: white;
+  background-color: #0B2360;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.usersPrivacyOuter .showMoreButton {
+  background-color: transparent;
+  color: #0B2360;
+  border: none;
+}
+
+.cardListingComplete {
+  overflow-y: auto;
+  display: flex;
+  max-height: 500px;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 258px;
 }
 
 .sidebar {
@@ -203,6 +260,25 @@ a {
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
+}
+.sideBarInner .sidebar-nav .nav-itemRelative {
+  position: relative;
+}
+.sideBarInner .sidebar-nav .nav-itemRelative .navItemAbsolute {
+  position: absolute;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #0B2360;
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  top: 50%;
+  color: #0B2360;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
 }
 .sideBarInner .sidebar-nav .nav-item {
   margin-bottom: 5px;
@@ -367,6 +443,11 @@ header .headerInner .menuButton svg {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 99999;
+  min-width: 290px;
+}
+.modalLogout .headerNotify {
+  color: #0B2360;
+  font-weight: 600;
 }
 .modalLogout .modalLogoutMain {
   position: relative;
@@ -479,6 +560,22 @@ header .headerInner .menuButton svg {
   scale: 0.98;
   opacity: 0.9;
 }
+.mainSection .faqItem .faqAnswer .replyButton {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: #0B2360;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+  margin-bottom: 10px;
+}
+.mainSection .faqItem .faqAnswer .replyButton:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
 .mainSection .faqItem .faqAnswer .question {
   margin: 20px 0;
 }
@@ -546,6 +643,21 @@ header .headerInner .menuButton svg {
   scale: 0.98;
   opacity: 0.9;
 }
+.mainSection .formFieldSelect {
+  margin-top: 25px;
+}
+.mainSection .formFieldRelative {
+  position: relative;
+}
+.mainSection .formFieldRelative .inputFieldAbsolute {
+  position: absolute;
+  bottom: -2.5px;
+  left: 27px;
+  transform: translate(-50%, -50%);
+}
+.mainSection .formFieldRelative .fieldAbsoluteInput {
+  padding-left: 45px;
+}
 .mainSection .addFieldMargin {
   margin-bottom: 40px;
 }
@@ -573,15 +685,33 @@ header .headerInner .menuButton svg {
   display: block;
   cursor: pointer;
 }
+.mainSection .addFields .AddInput {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.mainSection .addFields .AddInput input {
+  border: 1px solid grey;
+  outline: none;
+}
+.mainSection .addFields .AddInput .invalid {
+  border: 1px solid red;
+}
 .mainSection .addFields .AddInput button {
   border: 1px solid grey;
   background-color: transparent;
+  display: inline-flex;
+  height: 26px;
+  width: 26px;
+  align-items: center;
+  justify-content: center;
 }
 .mainSection .addFields .addfieldButton {
   font-size: 20px;
   line-height: 17px;
   cursor: pointer;
   border: none;
+  color: #0B2360;
 }
 .mainSection .addFields .addfieldButton svg {
   margin-bottom: 2px;
@@ -871,8 +1001,15 @@ header .headerInner .menuButton svg {
   display: flex;
 }
 .mainSection .billingTotal .topBilling h5 {
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
+}
+.mainSection .billingTotal .topBilling .totalPara {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 70px;
 }
 .mainSection .billingTotal .topBilling .totalPara p {
   margin: 0;
@@ -885,26 +1022,20 @@ header .headerInner .menuButton svg {
 .mainSection .mainSectionInner {
   width: 100%;
 }
-.mainSection .mainSectionWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.mainSection .mainSectionWrapper .billingMain h6 {
+.mainSection .mainSectionInner .billingMain h6 {
   margin-bottom: 15px;
   color: #666;
   font-size: 14px;
 }
-.mainSection .mainSectionWrapper .billingMain .billinBtnGroupOtr {
+.mainSection .mainSectionInner .billingMain .billinBtnGroupOtr {
   display: flex;
 }
-.mainSection .mainSectionWrapper .billingMain .billingMainInner {
+.mainSection .mainSectionInner .billingMain .billingMainInner {
   display: flex;
   gap: 30px;
   flex-direction: column;
 }
-.mainSection .mainSectionWrapper .billingMain .billingMainSearch {
+.mainSection .mainSectionInner .billingMain .billingMainSearch {
   font-size: 12px;
   border-radius: 50px;
   border: none;
@@ -912,157 +1043,182 @@ header .headerInner .menuButton svg {
   padding: 8px 10px;
   background-color: #EFEFEF;
 }
-.mainSection .mainSectionWrapper .billingMain .billinBtnGroup {
+.mainSection .mainSectionInner .billingMain .billinBtnGroup {
   display: flex;
   border-radius: 50px;
   background-color: #EFEFEF;
   margin-top: 20px;
 }
-.mainSection .mainSectionWrapper .billingMain .billBtnGr input[type=radio] {
+.mainSection .mainSectionInner .billingMain .billBtnGr input[type=radio] {
   display: none;
   /* Hide the radio buttons */
 }
-.mainSection .mainSectionWrapper .billingMain .billBtnGr label {
+.mainSection .mainSectionInner .billingMain .billBtnGr label {
   padding: 7px 30px;
   cursor: pointer;
   font-size: 13px;
 }
-.mainSection .mainSectionWrapper .billingMain .billBtnGr input[type=radio]:checked + label {
+.mainSection .mainSectionInner .billingMain .billBtnGr input[type=radio]:checked + label {
   background-color: #0B2360;
   color: white;
   border-radius: 50px;
 }
-.mainSection .mainSectionWrapper .billingMain .checkBoxesBilling {
+.mainSection .mainSectionInner .billingMain .checkBoxesBilling {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   -moz-column-gap: 20px;
-       column-gap: 20px;
+  row-gap: 10px;
+  column-gap: 20px;
   font-size: 12px;
   flex-wrap: wrap;
   max-width: 390px;
 }
-.mainSection .mainSectionWrapper .billingMain .checkBoxesBilling .checkboxBill {
+.mainSection .mainSectionInner .billingMain .checkBoxesBilling .checkboxBill {
   accent-color: #0B2360;
   display: flex;
   gap: 2px;
 }
-.mainSection .mainSectionWrapper .BillingTable tbody tr td {
+.mainSection .mainSectionInner .BillingTable tbody tr td {
   padding-left: 20px;
   text-align: left !important;
 }
-.mainSection .mainSectionWrapper .BillingTable tbody tr td strong {
+.mainSection .mainSectionInner .BillingTable tbody tr td strong {
   color: black;
   font-size: 15px;
 }
-.mainSection .mainSectionWrapper .BillingTable tbody tr .billingBodyRow {
+.mainSection .mainSectionInner .BillingTable tbody tr .billingBodyRow {
   display: flex;
   align-items: center;
   text-align: left;
 }
-.mainSection .mainSectionWrapper .BillingTable tbody tr .billingBodyRow p {
+.mainSection .mainSectionInner .BillingTable tbody tr .billingBodyRow p {
   margin: 0;
 }
-.mainSection .mainSectionWrapper .BillingTable tbody tr td .billingIconTable {
+.mainSection .mainSectionInner .BillingTable tbody tr td .billingIconTable {
   background-color: #0B2360;
   padding: 7px;
   border-radius: 50%;
   display: inline-block;
   margin-right: 10px;
 }
-.mainSection .mainSectionWrapper .BillingTable tbody tr td .billingIconTable svg {
+.mainSection .mainSectionInner .BillingTable tbody tr td .billingIconTable svg {
   height: 30px;
   min-width: 30px;
   color: white;
   border-radius: 50%;
 }
-.mainSection .mainSectionWrapper .billingTableHeading {
+.mainSection .mainSectionInner .billingTableHeading {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.mainSection .mainSectionWrapper .billingTableHeading .billingBtnGroup button:first-child {
-  border-radius: 50px 0 0 50px;
-  border-right: 0;
+.mainSection .mainSectionInner .billingTableHeading .billingBtnGroup {
+  display: flex;
 }
-.mainSection .mainSectionWrapper .billingTableHeading .billingBtnGroup button:last-child {
-  border-radius: 0 50px 50px 0;
+.mainSection .mainSectionInner .billingTableHeading .billingBtnGroup .billBtnGr input[type=radio] {
+  display: none;
+  /* Hide the radio buttons */
 }
-.mainSection .mainSectionWrapper .billingTableHeading .billingBtnGroup button {
-  padding: 5px 10px;
-  border: 1px solid grey;
-  background-color: transparent;
+.mainSection .mainSectionInner .billingTableHeading .billingBtnGroup .billBtnGr label {
+  padding: 7px 30px;
+  cursor: pointer;
+  font-size: 13px;
 }
-.mainSection .mainSectionWrapper .agentPreference {
-  height: 567px !important;
+.mainSection .mainSectionInner .billingTableHeading .billingBtnGroup .billBtnGr input[type=radio]:checked + label {
+  background-color: #0B2360;
+  color: white;
+  border-radius: 50px;
 }
-.mainSection .mainSectionWrapper .billingChart {
+.mainSection .mainSectionInner .agentPreference {
+  height: 540px !important;
+}
+.mainSection .mainSectionInner .billingChart {
   display: flex;
   gap: 18px;
   height: 72px;
 }
-.mainSection .mainSectionWrapper .billingChart img {
+.mainSection .mainSectionInner .billingChart img {
   width: 60px;
   height: 60px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.mainSection .mainSectionWrapper .billingChart .billingChartInner {
+.mainSection .mainSectionInner .billingChart .billingChartInner {
   line-height: 20px;
 }
-.mainSection .mainSectionWrapper .billingChart .billingChartInner p {
+.mainSection .mainSectionInner .billingChart .billingChartInner p {
   margin: 0;
   margin-bottom: 10px;
   font-size: 35px;
   font-weight: 700;
 }
-.mainSection .mainSectionWrapper .billingChart .billingChartInner span {
+.mainSection .mainSectionInner .billingChart .billingChartInner span {
   font-size: 16px;
   color: #464255;
   display: block;
 }
-.mainSection .mainSectionWrapper .billingChart .billingChartInner small {
+.mainSection .mainSectionInner .billingChart .billingChartInner small {
   font-size: 12px;
   color: #A3A3A3;
 }
-.mainSection .mainSectionWrapper .preferenceTable table tbody tr td {
+.mainSection .mainSectionInner .preferenceTable table tbody tr td {
   text-align: center;
 }
-.mainSection .mainSectionWrapper .preferenceTable table thead tr th:first-child {
+.mainSection .mainSectionInner .preferenceTable table thead tr th:first-child {
   border-radius: 5px 0 0 5px;
 }
-.mainSection .mainSectionWrapper .preferenceTable table thead tr th:last-child {
+.mainSection .mainSectionInner .preferenceTable table thead tr th:last-child {
   border-radius: 0 5px 5px 0;
 }
-.mainSection .mainSectionWrapper .preferenceTable table thead tr th {
+.mainSection .mainSectionInner .preferenceTable table thead tr th {
   height: 50px;
   padding-left: 20px;
   vertical-align: middle;
   background-color: #0B2360;
-  white-space: nowrap;
   color: white;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
 }
-.mainSection .mainSectionWrapper .preferenceHeading {
+.mainSection .mainSectionInner .preferenceHeading {
   display: flex;
   justify-content: space-between;
 }
-.mainSection .mainSectionWrapper .preferenceHeading .mainHeadingPreferenceTable {
+.mainSection .mainSectionInner .preferenceHeading .mainHeadingPreferenceTable {
   color: #5A5A5F;
   font-size: 15px;
 }
-.mainSection .mainSectionWrapper .preferenceHeading .preferenceRight {
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
-.mainSection .mainSectionWrapper .preferenceHeading .preferenceRight .filterButton {
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton {
   border: none;
   box-shadow: none;
   background-color: none;
+  position: relative;
 }
-.mainSection .mainSectionWrapper .preferenceHeading .preferenceRight button {
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton .filterMenu {
+  background-color: white;
+  bottom: -70px;
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 77px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton .filterMenu button {
+  border: none;
+  box-shadow: none;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton .filterMenu button:hover {
+  background-color: #0B2360;
+  color: white;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight button {
   border-radius: 5px;
   display: flex;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
@@ -1074,103 +1230,64 @@ header .headerInner .menuButton svg {
   padding: 0 10px;
   height: 20px;
 }
-.mainSection .mainSectionWrapper .agentNamePrivacy {
-  display: flex;
-  justify-content: space-between;
-}
-.mainSection .mainSectionWrapper .agentNamePrivacy label {
-  font-size: 22px;
-}
-.mainSection .mainSectionWrapper .agentNamePrivacy span {
-  color: #0B2360;
-  text-align: right;
-  font-size: 40px;
-}
-.mainSection .mainSectionWrapper .usersPrivacyOuter {
-  display: flex;
-  justify-content: space-between;
-}
-.mainSection .mainSectionWrapper .usersPrivacyOuter .usersPrivacy {
-  display: flex;
-  gap: 10px;
-}
-.mainSection .mainSectionWrapper .usersPrivacyOuter .usersPrivacy img {
-  height: 30px;
-  width: 30px;
-}
-.mainSection .mainSectionWrapper .usersPrivacyOuter .usersPrivacy .svgPrivacy {
-  color: white;
-  background-color: #0B2360;
-  height: 30px;
-  width: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-.mainSection .mainSectionWrapper .usersPrivacyOuter .showMoreButton {
-  background-color: transparent;
-  color: #0B2360;
-  border: none;
-}
-.mainSection .mainSectionWrapper .agentNamePara {
+.mainSection .mainSectionInner .agentNamePara {
   font-size: 14px;
   color: rgb(82, 82, 82);
   margin-bottom: 10px;
 }
-.mainSection .mainSectionWrapper .privacySummary h6 {
+.mainSection .mainSectionInner .privacySummary h6 {
   font-size: 18px;
   margin-bottom: 30px;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer {
+.mainSection .mainSectionInner .privacySummary .summaryContainer {
   padding-right: 50px;
   margin-bottom: 30px;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .yellowOpacity {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .yellowOpacity {
   background-color: rgba(255, 179, 0, 0.231372549);
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .lightOpacity {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .lightOpacity {
   background-color: rgba(66, 57, 242, 0.2196078431);
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .blueOpacity {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .blueOpacity {
   background-color: rgba(2, 160, 252, 0.2274509804);
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .redOpacity {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .redOpacity {
   background-color: rgba(255, 59, 41, 0.2039215686);
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .labelContainer {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .labelContainer {
   display: flex;
   justify-content: space-between;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .yellow {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .yellow {
   color: #FFB200;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .blue {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .blue {
   color: #02A0FC;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .light {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .light {
   color: #4339F2;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .red {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .red {
   color: #FF3A29;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress {
   height: 8px;
   margin-top: 5px;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress .yellowLoader {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress .yellowLoader {
   background-color: #FFB200;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress .blueLoader {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress .blueLoader {
   background-color: #02A0FC;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress .lightLoader {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress .lightLoader {
   background-color: #4339F2;
 }
-.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress .redLoader {
+.mainSection .mainSectionInner .privacySummary .summaryContainer .progress .redLoader {
   background-color: #FF3A29;
 }
-.mainSection .mainSectionWrapper .allNotificationCard {
+.mainSection .mainSectionInner .allNotificationCard {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -1178,17 +1295,17 @@ header .headerInner .menuButton svg {
   height: 252px;
   overflow-y: auto;
 }
-.mainSection .mainSectionWrapper .allNotificationCard .notify {
+.mainSection .mainSectionInner .allNotificationCard .notify {
   display: flex;
   gap: 8px;
 }
-.mainSection .mainSectionWrapper .allNotificationCard .notify img {
+.mainSection .mainSectionInner .allNotificationCard .notify img {
   width: 30px;
   height: 30px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.mainSection .mainSectionWrapper .allNotificationCard .notify svg {
+.mainSection .mainSectionInner .allNotificationCard .notify svg {
   background-color: #0B2360;
   color: white;
   height: 30px;
@@ -1196,59 +1313,66 @@ header .headerInner .menuButton svg {
   min-width: 30px;
   border-radius: 10px;
 }
-.mainSection .mainSectionWrapper .allNotificationCard .notify .notifyInfo {
+.mainSection .mainSectionInner .allNotificationCard .notify .notifyInfo {
   line-height: 12px;
 }
-.mainSection .mainSectionWrapper .allNotificationCard .notify .notifyInfo p {
+.mainSection .mainSectionInner .allNotificationCard .notify .notifyInfo p {
   font-size: 14px;
   margin: 0;
   line-height: 17px;
   padding: 0;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 153px;
 }
-.mainSection .mainSectionWrapper .allNotificationCard .notify .notifyInfo small {
+.mainSection .mainSectionInner .allNotificationCard .notify .notifyInfo small {
   color: var(--black-40, rgba(28, 28, 28, 0.4));
   font-size: 12px;
 }
-.mainSection .mainSectionWrapper .agentList {
+.mainSection .mainSectionInner .agentList {
   list-style: none;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 5px;
   padding: 0;
   height: 250px;
   overflow-y: auto;
 }
-.mainSection .mainSectionWrapper .agentList li {
+.mainSection .mainSectionInner .agentList li button {
   display: flex;
   align-items: center;
   gap: 13px;
+  padding: 5px 0 5px 5px;
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
-.mainSection .mainSectionWrapper .agentList li img {
+.mainSection .mainSectionInner .agentList li button:hover {
+  background-color: rgb(238, 238, 238);
+}
+.mainSection .mainSectionInner .agentList li img {
   width: 32px;
   height: 32px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.mainSection .mainSectionWrapper .agentList li p {
+.mainSection .mainSectionInner .agentList li p {
   margin: 0;
   padding: 0;
   color: #0B2360;
   font-size: 12px;
 }
-.mainSection .mainSectionWrapper .headingNotification {
+.mainSection .mainSectionInner .headingNotification {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.mainSection .mainSectionWrapper .headingNotification .dropdown {
+.mainSection .mainSectionInner .headingNotification .dropdown {
   position: relative;
 }
-.mainSection .mainSectionWrapper .headingNotification .dropdown .btnDropDown {
+.mainSection .mainSectionInner .headingNotification .dropdown .btnDropDown {
   background-color: transparent;
   height: 20px;
   width: 20px;
@@ -1258,10 +1382,10 @@ header .headerInner .menuButton svg {
   display: flex;
   align-items: center;
 }
-.mainSection .mainSectionWrapper .headingNotification .dropdown .btnDropDown:active {
+.mainSection .mainSectionInner .headingNotification .dropdown .btnDropDown:active {
   background-color: rgba(170, 151, 176, 0.2588235294);
 }
-.mainSection .mainSectionWrapper .headingNotification .dropdown .dropdownMenu {
+.mainSection .mainSectionInner .headingNotification .dropdown .dropdownMenu {
   position: absolute;
   z-index: 1;
   background-color: white;
@@ -1269,140 +1393,141 @@ header .headerInner .menuButton svg {
   list-style: none;
   margin: 0;
 }
-.mainSection .mainSectionWrapper .headingNotification .dropdown .dropdownMenu li {
+.mainSection .mainSectionInner .headingNotification .dropdown .dropdownMenu li {
   padding: 5px 20px 5px 20px;
 }
-.mainSection .mainSectionWrapper .headingNotification .dropdown .dropdownMenu li:hover {
+.mainSection .mainSectionInner .headingNotification .dropdown .dropdownMenu li:hover {
   background-color: #0B2360;
   color: white;
 }
-.mainSection .mainSectionWrapper .searchBar2 {
+.mainSection .mainSectionInner .searchBar2 {
   position: relative;
   width: 100%;
   height: 40px;
   margin-bottom: 22px;
 }
-.mainSection .mainSectionWrapper .searchBar2 svg {
+.mainSection .mainSectionInner .searchBar2 svg {
   position: absolute;
   top: 50%;
   left: 20px;
   font-size: 24px;
   transform: translate(-50%, -50%);
 }
-.mainSection .mainSectionWrapper .searchBar2 input {
+.mainSection .mainSectionInner .searchBar2 input {
   padding-left: 35px;
   height: 100%;
   width: 100%;
 }
-.mainSection .mainSectionWrapper .preferenceMaintable {
+.mainSection .mainSectionInner .preferenceMaintable {
   height: 630px;
   overflow-y: auto;
 }
-.mainSection .mainSectionWrapper .marginBottomRow {
+.mainSection .mainSectionInner .marginBottomRow {
   margin-bottom: 25px;
 }
-.mainSection .mainSectionWrapper .privacyTable .privacyAgentCol {
+.mainSection .mainSectionInner .privacyTable .privacyAgentCol {
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.mainSection .mainSectionWrapper .privacyTable .privacyAgentCol img {
+.mainSection .mainSectionInner .privacyTable .privacyAgentCol img {
   width: 32px;
   height: 32px;
 }
-.mainSection .mainSectionWrapper .privacyTable .privacyAgentCol p {
+.mainSection .mainSectionInner .privacyTable .privacyAgentCol p {
   margin-bottom: 0;
   color: #5A5A5F;
   font-size: 18px;
 }
-.mainSection .mainSectionWrapper .privacyTable .privacyStatusCol {
+.mainSection .mainSectionInner .privacyTable .privacyStatusCol {
   display: flex;
   align-items: center;
   height: 100%;
   gap: 10px;
 }
-.mainSection .mainSectionWrapper .privacyTable .privacyStatusCol .activity {
+.mainSection .mainSectionInner .privacyTable .privacyStatusCol .activity {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #11D600;
 }
-.mainSection .mainSectionWrapper .privacyTable .privacyStatusCol p {
+.mainSection .mainSectionInner .privacyTable .privacyStatusCol p {
   margin-bottom: 0;
   color: #5A5A5F;
   font-size: 18px;
 }
-.mainSection .mainSectionWrapper .privacyTable .iconsChannel button {
+.mainSection .mainSectionInner .privacyTable .iconsChannel button {
   background-color: transparent;
   border: none;
 }
-.mainSection .mainSectionWrapper .privacyTable .iconsChannel svg {
+.mainSection .mainSectionInner .privacyTable .iconsChannel svg {
   margin-right: 5px;
   font-size: 20px;
   color: #5A5A5F;
 }
-.mainSection .mainSectionWrapper .privacyTable .editColumn {
+.mainSection .mainSectionInner .privacyTable .editColumn {
   color: #0B2360;
   background-color: transparent;
   border: none;
 }
-.mainSection .mainSectionWrapper .privacyTable .editColumn svg {
+.mainSection .mainSectionInner .privacyTable .editColumn svg {
   font-size: 20px;
 }
-.mainSection .mainSectionWrapper .privacyTable .privacyPagination .pagination {
+.mainSection .mainSectionInner .privacyTable .privacyPagination .pagination {
   gap: 5px;
 }
-.mainSection .mainSectionWrapper .privacyTable .privacyPagination .pagination li:first-child {
+.mainSection .mainSectionInner .privacyTable .privacyPagination .pagination li:first-child {
   width: auto;
 }
-.mainSection .mainSectionWrapper .privacyTable .privacyPagination .pagination li:last-child {
+.mainSection .mainSectionInner .privacyTable .privacyPagination .pagination li:last-child {
   width: auto;
 }
-.mainSection .mainSectionWrapper .communicationTable h6 {
+.mainSection .mainSectionInner .communicationTable h6 {
   color: #5A5A5F;
   font-size: 18px;
 }
-.mainSection .mainSectionWrapper .communicationTable table tbody tr td {
+.mainSection .mainSectionInner .communicationTable table tbody tr td {
   color: #797979;
   font-size: 11px;
   text-align: center;
 }
-.mainSection .mainSectionWrapper .communicationTable table thead tr th:first-child {
+.mainSection .mainSectionInner .communicationTable table thead tr th:first-child {
   border-radius: 5px 0 0 5px;
 }
-.mainSection .mainSectionWrapper .communicationTable table thead tr th:last-child {
+.mainSection .mainSectionInner .communicationTable table thead tr th:last-child {
   border-radius: 0 5px 5px 0;
 }
-.mainSection .mainSectionWrapper .communicationTable table thead tr th {
+.mainSection .mainSectionInner .communicationTable table thead tr th {
   height: 50px;
   padding-left: 20px;
   vertical-align: middle;
   background-color: #0B2360;
-  white-space: nowrap;
   color: white;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
 }
-.mainSection .mainSectionWrapper .CommunicationComponent {
+.mainSection .mainSectionInner .CommunicationComponent {
   height: 312px;
   position: relative;
 }
-.mainSection .mainSectionWrapper .CommunicationComponent .communicationChat {
-  padding-left: 10px;
+.mainSection .mainSectionInner .CommunicationComponent .communicationChat {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 48px;
   background-color: #F8F8F8;
 }
-.mainSection .mainSectionWrapper .CommunicationComponent .communicationChat input {
+.mainSection .mainSectionInner .CommunicationComponent .communicationChat input {
+  padding-left: 15px;
   background-color: #F8F8F8;
   width: 100%;
+  outline: none;
+  padding-right: 70px;
   height: 100%;
   border: none;
 }
-.mainSection .mainSectionWrapper .CommunicationComponent .communicationChat .sendChatButton {
+.mainSection .mainSectionInner .CommunicationComponent .communicationChat .sendChatButton {
   background-color: #0B2360;
   border: none;
   color: white;
@@ -1414,7 +1539,7 @@ header .headerInner .menuButton svg {
   position: absolute;
   right: 0;
 }
-.mainSection .mainSectionWrapper .CommunicationComponent .communicationHeader {
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader {
   height: 50px;
   background-color: #0B2360;
   display: flex;
@@ -1423,76 +1548,76 @@ header .headerInner .menuButton svg {
   color: white;
   padding: 0 11px;
 }
-.mainSection .mainSectionWrapper .CommunicationComponent .communicationHeader .communicationAbout img {
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationAbout img {
   height: 32px;
   width: 32px;
   -o-object-fit: contain;
      object-fit: contain;
   margin-right: 6px;
 }
-.mainSection .mainSectionWrapper .CommunicationComponent .communicationHeader .communicationAbout span {
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationAbout span {
   font-size: 12px;
 }
-.mainSection .mainSectionWrapper .CommunicationComponent .communicationHeader .communicationControls svg {
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationControls svg {
   font-size: 19px;
   margin-right: 24px;
 }
-.mainSection .mainSectionWrapper .statsRowLast {
+.mainSection .mainSectionInner .statsRowLast {
   height: 113px !important;
 }
-.mainSection .mainSectionWrapper .statsRow {
+.mainSection .mainSectionInner .statsRow {
   display: flex;
   justify-content: space-between;
   height: 89px;
 }
-.mainSection .mainSectionWrapper .statsRow .statCol {
+.mainSection .mainSectionInner .statsRow .statCol {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-.mainSection .mainSectionWrapper .statsRow .statsColumn .greenBackground {
+.mainSection .mainSectionInner .statsRow .statsColumn .greenBackground {
   background-color: #14b8a6;
 }
-.mainSection .mainSectionWrapper .statsRow .statsColumn .yellowBackground {
+.mainSection .mainSectionInner .statsRow .statsColumn .yellowBackground {
   background-color: #ffb020;
 }
-.mainSection .mainSectionWrapper .statsRow .statsColumn .purpleBackground {
+.mainSection .mainSectionInner .statsRow .statsColumn .purpleBackground {
   background-color: #5048e4;
 }
-.mainSection .mainSectionWrapper .statsRow .statsColumn .redBackground {
+.mainSection .mainSectionInner .statsRow .statsColumn .redBackground {
   background-color: #E53835;
 }
-.mainSection .mainSectionWrapper .statsRow .statsColumn .columnIcon {
+.mainSection .mainSectionInner .statsRow .statsColumn .columnIcon {
   color: white;
   padding: 10px 18px 15px 18px;
   border-radius: 50%;
   font-size: 25px;
 }
-.mainSection .mainSectionWrapper .statsRow .statsColumn span {
+.mainSection .mainSectionInner .statsRow .statsColumn span {
   color: #5A5A5F;
   font-size: 14px;
 }
-.mainSection .mainSectionWrapper .statsRow .statsColumn h6 {
+.mainSection .mainSectionInner .statsRow .statsColumn h6 {
   font-weight: bold;
   font-size: 30px;
 }
-.mainSection .mainSectionWrapper .redArrow {
+.mainSection .mainSectionInner .redArrow {
   color: #E53835;
 }
-.mainSection .mainSectionWrapper .greenArrow {
+.mainSection .mainSectionInner .greenArrow {
   color: #14b8a6;
 }
-.mainSection .mainSectionWrapper .purpleBarProf {
+.mainSection .mainSectionInner .purpleBarProf {
   opacity: 0;
 }
-.mainSection .mainSectionWrapper .purpleBar {
+.mainSection .mainSectionInner .purpleBar {
   accent-color: #5048e4;
   width: 100%;
 }
-.mainSection .mainSectionWrapper .chartHeading1 {
+.mainSection .mainSectionInner .chartHeading1 {
   text-align: center;
 }
-.mainSection .mainSectionWrapper .chartHeading1 p {
+.mainSection .mainSectionInner .chartHeading1 p {
   color: #0B2360;
   font-size: 16px;
   font-style: normal;
@@ -1501,7 +1626,7 @@ header .headerInner .menuButton svg {
   top: 10px;
   position: relative;
 }
-.mainSection .mainSectionWrapper .chartHeading1 p::after {
+.mainSection .mainSectionInner .chartHeading1 p::after {
   content: "";
   position: absolute;
   height: 2px;
@@ -1511,14 +1636,14 @@ header .headerInner .menuButton svg {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.mainSection .mainSectionWrapper .chartHeading p {
+.mainSection .mainSectionInner .chartHeading p {
   margin: 0;
   color: #5A5A5F;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
 }
-.mainSection .mainSectionWrapper .box1 p {
+.mainSection .mainSectionInner .box1 p {
   margin: 0;
   color: #0B2360;
   font-size: 32px;
@@ -1542,6 +1667,184 @@ header .headerInner .menuButton svg {
   color: white;
 }
 
+.headerDark .headerInner {
+  background-color: #464255;
+}
+.headerDark .navRight p {
+  color: white !important;
+}
+.headerDark .searchBarHeader svg {
+  color: white !important;
+}
+.headerDark .searchBarHeader input {
+  background-color: #464255;
+  color: white;
+  outline: none;
+}
+.headerDark .searchBarHeader input::-moz-placeholder {
+  color: rgb(190, 190, 190);
+}
+.headerDark .searchBarHeader input::placeholder {
+  color: rgb(190, 190, 190);
+}
+
+.darkMain {
+  background-color: #222222;
+}
+
+.sideBarDark {
+  background-color: #222222;
+}
+
+.mainSectionWrapperDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mainSectionWrapperDark .apexcharts-legend-text {
+  color: white !important;
+}
+.mainSectionWrapperDark .headingMainCon h3 {
+  color: white !important;
+}
+.mainSectionWrapperDark .mainListHeading {
+  color: white !important;
+}
+.mainSectionWrapperDark .mainListPara {
+  color: rgb(177, 177, 177) !important;
+}
+.mainSectionWrapperDark .accordion-button {
+  background-color: #464255 !important;
+  color: white !important;
+}
+.mainSectionWrapperDark .accordion-body {
+  background-color: #464255 !important;
+  color: white !important;
+}
+.mainSectionWrapperDark .checkboxBill label {
+  color: white;
+}
+.mainSectionWrapperDark .faqItem .headerInnerLeft p {
+  color: white !important;
+}
+.mainSectionWrapperDark table {
+  --bs-table-bg: #464255 !important;
+  --bs-table-color: $base-color2 !important;
+}
+.mainSectionWrapperDark table tbody tr td {
+  color: white !important;
+}
+.mainSectionWrapperDark table tbody tr td P {
+  color: white !important;
+}
+.mainSectionWrapperDark table tbody tr td .iconsChannel button svg {
+  color: white !important;
+}
+.mainSectionWrapperDark .pagination li {
+  color: white !important;
+}
+.mainSectionWrapperDark .privacySummary h6 {
+  color: white !important;
+}
+.mainSectionWrapperDark .privacySummary label {
+  color: white !important;
+}
+.mainSectionWrapperDark .profileCustomer {
+  color: white !important;
+}
+.mainSectionWrapperDark .formHeading5 {
+  color: white !important;
+}
+.mainSectionWrapperDark .addFields .AddInput button {
+  color: white;
+}
+.mainSectionWrapperDark .formField {
+  color: white !important;
+}
+.mainSectionWrapperDark .formField input {
+  background-color: #464255;
+  color: white !important;
+}
+.mainSectionWrapperDark .formField input::-moz-placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField input::placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField select {
+  background-color: #464255;
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField select::-moz-placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField select::placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .addfieldButton {
+  background-color: #222222;
+  color: white;
+}
+.mainSectionWrapperDark .fieldHead {
+  color: white !important;
+}
+.mainSectionWrapperDark .card {
+  background-color: #464255 !important;
+}
+.mainSectionWrapperDark .card .searchBar2 input {
+  background-color: #464255;
+  border: 1px solid white;
+  color: white;
+}
+.mainSectionWrapperDark .card .searchBar2 svg {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .communicationChat input {
+  background-color: #464255 !important;
+  border: 1px solid white !important;
+  color: white !important;
+}
+.mainSectionWrapperDark .card p {
+  color: white !important;
+}
+.mainSectionWrapperDark .card h6 {
+  color: white !important;
+}
+.mainSectionWrapperDark .card small {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .statsColumn.statCol span {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .preferenceRight button {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .billinBtnGroup {
+  background-color: #464255 !important;
+}
+.mainSectionWrapperDark .card .billingMainSearch {
+  background-color: #464255 !important;
+  border: 1px solid white !important;
+  color: white;
+  outline: none;
+}
+.mainSectionWrapperDark .card .billBtnGr {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .headingNotification {
+  color: white;
+}
+.mainSectionWrapperDark .card .headingNotification .btnDropDown {
+  color: white;
+}
+.mainSectionWrapperDark .card .headingNotification .dropdownMenu li a {
+  color: black;
+}
+.mainSectionWrapperDark .card .headingNotification .dropdownMenu li a:hover {
+  color: white;
+}
+
 .chartHeading2 .chartHeading2InnerFirst {
   font-size: 14px;
   margin-bottom: 8px;
@@ -1550,25 +1853,263 @@ header .headerInner .menuButton svg {
   font-size: 20px;
   font-weight: 500px;
 }
+.chartHeading2 .chartHeading2InnerFourth {
+  color: #262A41;
+  font-size: 30px;
+  font-weight: 600;
+}
 .chartHeading2 .chartHeading2InnerThird {
   font-size: 13px;
   color: grey;
   font-weight: 400;
 }
 
+.AgentApp {
+  margin-bottom: 40px;
+}
+.AgentApp .channels {
+  height: auto;
+}
+.AgentApp .performanceTotalVisits {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit {
+  display: flex;
+  justify-content: space-between;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit .leftSide {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit .leftSide svg {
+  font-size: 30px;
+  background-color: #0B2360;
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit .leftSide .leftSidePara p {
+  margin-bottom: 0;
+}
+.AgentApp .performanceTotalVisits .performanceSingleVisit .leftSide .leftSidePara .leftSideLast {
+  color: #404852;
+}
+.AgentApp .customerReview {
+  height: 568px;
+  position: relative;
+}
+.AgentApp .customerReview .seeAllButtonDiv {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+}
+.AgentApp .customerReview .seeAllButtonDiv button {
+  background-color: transparent;
+  border: none;
+  color: #343A40;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+.AgentApp .customerReview .seeAllButtonDiv button svg {
+  font-size: 30px;
+}
+.AgentApp .performanceCard .apexcharts-bar-area:hover {
+  fill: #0B2360 !important;
+}
+.AgentApp .performanceCard .apexcharts-xaxis {
+  display: none;
+}
+.AgentApp .performanceCard .apexcharts-ycrosshairs {
+  display: none;
+}
+.AgentApp .performanceCard .apexcharts-grid {
+  display: none;
+}
+.AgentApp .borderBottomMargin {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+.AgentApp .cardSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.AgentApp .cardSpaceBetween .bottom {
+  color: #ADB5BD;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.AgentApp .cardSpaceBetween .left {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.AgentApp .cardSpaceBetween .left svg {
+  color: #FCC419;
+  font-size: 18px;
+}
+.AgentApp .cardSpaceBetween .left .name {
+  display: flex;
+  gap: 10px;
+}
+.AgentApp .cardSpaceBetween .LeftSide {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.AgentApp .cardSpaceBetween .LeftSide img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background-color: #F5F5F5;
+  border-radius: 50%;
+}
+.AgentApp .cardSpaceBetween .LeftSide .chartHeading2 .chartHeading2InnerSecond {
+  font-size: 18px;
+}
+.AgentApp .cardSpaceBetween .LeftSide .chartHeading2 p {
+  margin-bottom: 0;
+}
+.AgentApp .cardSpaceBetween .RightSide button {
+  background-color: transparent;
+  border: none;
+}
+.AgentApp .cardSpaceBetween .customerReviewSelect {
+  border: 1px solid white;
+  outline: none;
+}
+.AgentApp .overlappingUser {
+  position: relative;
+  width: 105px;
+}
+.AgentApp .overlappingUser img {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.AgentApp .overlappingUser .img1 {
+  left: 0;
+}
+.AgentApp .overlappingUser .img2 {
+  left: 25px;
+}
+.AgentApp .overlappingUser .img3 {
+  left: 50px;
+}
+.AgentApp .overlappingUser .img4 {
+  left: 75px;
+}
+.AgentApp .cardHeightChannel {
+  height: 722px;
+}
+.AgentApp .cardHeightChannel .card-body {
+  flex: 0;
+}
+.AgentApp .addChannelIcon {
+  margin: 0 auto;
+}
+.AgentApp .addChannelIcon button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  gap: 5px;
+  background-color: transparent;
+  color: #0B2360;
+}
+.AgentApp .addChannelIcon button svg {
+  font-size: 36px;
+}
+.AgentApp .addChannelIcon button span {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 800;
+}
+.AgentApp .tableHeight {
+  height: 300px;
+}
 .AgentApp .apexcharts-legend .apexcharts-legend-series .apexcharts-legend-marker {
   background-color: #0B2360 !important;
 }
-.AgentApp .apexcharts-toolbar {
-  top: -90px !important;
-  right: 20px !important;
+.AgentApp .radialChartrelative {
+  position: relative;
+  height: 350px;
 }
-.AgentApp .apexcharts-toolbar .apexcharts-menu-icon {
-  width: auto;
-  height: auto;
+.AgentApp .radialChartrelative .radialChartAbsolute {
+  position: absolute;
 }
-.AgentApp .apexcharts-toolbar .apexcharts-menu-icon button {
-  background-color: white;
-  padding: 10px 30px;
-  border: 1px solid #0B2360;
+.AgentApp .radialChartrelative .radial1 {
+  left: 129px;
+  bottom: 63px;
+}
+.AgentApp .radialChartrelative .radial2 {
+  left: -50px;
+  bottom: 0px;
+}
+.AgentApp .radialChartrelative .radial3 {
+  left: -44px;
+}
+.AgentApp .cardMainHeading {
+  font-size: 15px;
+  font-weight: 600;
+}
+.AgentApp .basicInfoContainer {
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #bbbbbb;
+}
+.AgentApp .basicInfoContainer .basicInfoWrapper .basicInfoHeading {
+  color: #5E5E5E;
+  margin-bottom: 0px;
+  font-weight: 500;
+  font-size: 12px;
+}
+.AgentApp .basicInfoContainer .basicInfoWrapper .basicInfoPara {
+  color: #5E5E5E;
+  font-size: 12px;
+  font-weight: 400;
+}
+.AgentApp .customerName {
+  overflow: auto;
+  scrollbar-gutter: stable;
+  height: 661px;
+  padding: 0px 4px;
+}
+.AgentApp .customerName .customerElement {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid rgb(189, 189, 189);
+  gap: 10px;
+}
+.AgentApp .customerName .customerElement img {
+  width: 32px;
+  height: 32px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.AgentApp .customerName .customerElement p {
+  margin: 0;
+  align-self: center;
+  font-size: 12px;
+}
+.AgentApp .customerName .customerElement small {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 10px;
 }/*# sourceMappingURL=App.css.map */

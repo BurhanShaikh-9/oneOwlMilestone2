@@ -85,7 +85,7 @@ export const Privacy = () => {
                                             <tbody>
                                                 {
                                                     displayedItems.map((item, keyId) => (
-                                                        <tr>
+                                                        <tr key={keyId}>
                                                             <td>
                                                                 <div className="privacyAgentCol">
                                                                     <img src={profileImg} alt="" />
@@ -144,8 +144,8 @@ export const Privacy = () => {
                                         <div className="labelContainer">
                                             <label>Instagram</label> <span className='yellow'>65,376</span>
                                         </div>
-                                        <div class="progress yellowOpacity">
-                                            <div class="progress-bar yellowLoader" style={{ width: '80%' }}>
+                                        <div className="progress yellowOpacity">
+                                            <div className="progress-bar yellowLoader" style={{ width: '80%' }}>
                                             </div>
                                         </div>
                                     </div>
@@ -153,8 +153,8 @@ export const Privacy = () => {
                                         <div className="labelContainer">
                                             <label>Instagram</label> <span className='light'>65,376</span>
                                         </div>
-                                        <div class="progress lightOpacity">
-                                            <div class="progress-bar lightLoader" style={{ width: '80%' }}>
+                                        <div className="progress lightOpacity">
+                                            <div className="progress-bar lightLoader" style={{ width: '80%' }}>
                                             </div>
                                         </div>
                                     </div>
@@ -162,8 +162,8 @@ export const Privacy = () => {
                                         <div className="labelContainer">
                                             <label>Instagram</label> <span className='blue'>65,376</span>
                                         </div>
-                                        <div class="progress blueOpacity">
-                                            <div class="progress-bar blueLoader" style={{ width: '80%' }}>
+                                        <div className="progress blueOpacity">
+                                            <div className="progress-bar blueLoader" style={{ width: '80%' }}>
                                             </div>
                                         </div>
                                     </div>
@@ -171,8 +171,8 @@ export const Privacy = () => {
                                         <div className="labelContainer">
                                             <label>Instagram</label> <span className='red'>65,376</span>
                                         </div>
-                                        <div class="progress redOpacity">
-                                            <div class="progress-bar redLoader" style={{ width: '80%' }}>
+                                        <div className="progress redOpacity">
+                                            <div className="progress-bar redLoader" style={{ width: '80%' }}>
                                             </div>
                                         </div>
                                     </div>

@@ -3,12 +3,13 @@ export const ROUTES = {
     COMMUNICATION: "communication",
     PREFERENCE: "preference",
     BILLING: "billing",
-    
+    SERVICE: "service",
     DASHBOARD_AGENT: "/",
     NOTIFICATION: "notification",
     SETTINGS: "setting",
     PROFILE: "profile",
     FAQ: "faq",
     PRIVACY: "privacy",
+    PERFORMANCE: "performance",
 
 }

@@ -78,6 +78,16 @@ export const Sidebar = () => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.SERVICE} onClick={closeMobileButton}>
+                                <GoHome className='sideIcon' /><span>Service</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PERFORMANCE} onClick={closeMobileButton}>
+                                <GoHome className='sideIcon' /><span>Performance</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMMUNICATION} onClick={closeMobileButton}>
                                 <PiArrowSquareDown className='sideIcon' /><span>Communication</span>
