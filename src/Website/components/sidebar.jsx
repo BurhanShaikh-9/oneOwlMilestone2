@@ -79,20 +79,20 @@ export const Sidebar = () => {
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.SERVICE} onClick={closeMobileButton}>
-                                <GoHome className='sideIcon' /><span>Service</span>
+                                <PiArrowSquareDown className='sideIcon' /><span>Service</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PERFORMANCE} onClick={closeMobileButton}>
-                                <GoHome className='sideIcon' /><span>Performance</span>
+                                <LiaEdit className='sideIcon' /><span>Performance</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMPLIANCE} onClick={closeMobileButton}>
-                                <GoHome className='sideIcon' /><span>Complliance</span>
+                                <LiaListAltSolid className='sideIcon' /><span>Complliance</span>
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMMUNICATION} onClick={closeMobileButton}>
                                 <PiArrowSquareDown className='sideIcon' /><span>Communication</span>
@@ -115,7 +115,7 @@ export const Sidebar = () => {
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PRIVACY}>
                                 <PiTruckLight className='sideIcon' /><span>Data Privacy</span>
                             </NavLink>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PROFILE} onClick={closeMobileButton}>
