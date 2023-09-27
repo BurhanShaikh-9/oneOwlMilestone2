@@ -19,6 +19,7 @@ import { Privacy } from './Website/pages/Privacy/privacy';
 import { DashboardAgent } from './Website/pages/DashbordAgent/dashboardAgent';
 import { Service } from './Website/pages/Service/service';
 import { Performance } from './Website/pages/Performance/performance';
+import { Compliance } from './Website/pages/compliance/compliance';
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <Route path={ROUTES.DASHBOARD_AGENT} element={<DashboardAgent/>}/>
           <Route path={ROUTES.SERVICE} element={<Service/>}/>
           <Route path={ROUTES.PERFORMANCE} element={<Performance />} />
+          <Route path={ROUTES.COMPLIANCE} element={<Compliance />} />
         </Route>
       </Routes>
     </React.Fragment>

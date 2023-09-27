@@ -56,11 +56,14 @@ export const Performance = () => {
     const barChart1 = {
         series: [{
             name: 'Today',
-            data: [44, 55, 57, 56, 61, 58, 63, 60, 32, 53, 64, 74, 42, 12]
+            data: [44, 55, 57, 56, 61, 58, 63, 60, 32, 53, 64, 74]
         }],
         chart: {
             type: 'bar',
-            height: 350
+            height: 350,
+            toolbar: {
+                show: false,
+            },
         },
         dataLabels: {
             enabled: false
@@ -79,14 +82,14 @@ export const Performance = () => {
             colors: ['transparent']
         },
         xaxis: {
-            categories: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14'],
+            categories: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
         },
         yaxis: {
-            show: false
+            show: true
         },
         fill: {
             opacity: 1,
-            colors: ['#E6E8EC']
+            colors: ['#0B2360']
         },
         theme: {
             palette: 'custom',
@@ -96,6 +99,40 @@ export const Performance = () => {
             },
         },
     };
+    const options = {
+        series: [
+            {
+                name: 'Series 1',
+                data: [44, 55, 57, 56, 61, 58, 63, 60, 32, 53, 64, 74]
+            },
+        ],
+        chart: {
+            id: 'gradient-line',
+            toolbar: {
+                show: false,
+            },
+        },
+        stroke: {
+            curve: 'smooth',
+            width: 7,
+        },
+        xaxis: {
+            categories: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+        },
+        colors: ['#0B2360'],
+        fill: {
+            colors: ['#0B2360'],
+            type: 'gradient',
+            gradient: {
+                shadeIntensity: 0,
+                opacityFrom: 0.4,
+                opacityTo: 0.9,
+                stops: [0, 90, 100],
+            },
+        },
+    };
+
+
 
 
     const [currentPage, setCurrentPage] = useState(0); // Current page state
@@ -302,6 +339,22 @@ export const Performance = () => {
                                     </select>
                                 </div>
                                 <ReactApexChart options={barChart1} series={barChart1.series} type="bar" height={300} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div className="card cardMargin">
+                            <div className="card-body">
+                                <div className="cardSpaceBetween">
+                                    <div className="chartHeading2">
+                                        <p className='chartHeading2InnerSecond'>Overall User Acquisition</p>
+                                    </div>
+                                    <select className='customerReviewSelect' name="" id="">
+                                        <option value="">Today</option>
+                                        <option value="">Yesterday</option>
+                                    </select>
+                                </div>
+                                <ReactApexChart options={options} series={options.series} type="line" height={300} />
                             </div>
                         </div>
                     </div>
