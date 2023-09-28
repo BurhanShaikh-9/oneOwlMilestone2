@@ -2390,6 +2390,12 @@ header {
     font-weight: 400;
 
   }
+
+  .chartHeading2InnerFifth {
+    color: $base-color;
+    font-size: 44px;
+    font-weight: 500;
+  }
 }
 
 .AgentApp {
@@ -2711,8 +2717,8 @@ header {
     }
   }
 
-  .complianceeReview{
-    .viewAllButton{
+  .complianceeReview {
+    .viewAllButton {
       border: none;
       outline: none;
       width: 100%;
@@ -2722,24 +2728,29 @@ header {
       border-top: 1px solid rgb(201, 201, 201);
       color: $base-color;
       font-weight: 600;
-      }
-    .complianceHeading{
+    }
+
+    .complianceHeading {
       margin: 10px 0 30px 0;
     }
-    .carrotGreen{
+
+    .carrotGreen {
       color: green;
     }
-    .carrotRed{
+
+    .carrotRed {
       color: red;
     }
-    .LeftSide{
-      img{
+
+    .LeftSide {
+      img {
         width: 50px;
         height: 50px;
         background-color: transparent;
       }
     }
   }
+
   .SortingContainer {
     display: flex;
     align-items: center;
@@ -2774,5 +2785,141 @@ header {
       font-size: 24px;
       font-weight: 700;
     }
+  }
+
+
+  .checkBoxSlider {
+    margin-right: 30px;
+    display: flex;
+    gap: 10px;
+
+    p {
+      margin-bottom: 0;
+      color: #5A5A5F;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 29px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      // background-color: #ccc;
+      border: 3px solid #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 13px;
+      bottom: -8.5px;
+      transform: translate(-50%, -50%);
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: $base-color;
+      border: 3px solid transparent;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px $base-color;
+    }
+
+    input:checked+.slider:before {
+      background-color: $base-color2;
+      -webkit-transform: translate(18px, -10px);
+      -ms-transform: translate(18px, -10px);
+      transform: translate(18px, -10px);
+
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  }
+  .workflowTable{
+    margin-top: 30px;
+    select{
+      border: 1px solid white;
+    }
+    .workFlowButtonTheme{
+      @include themeBlueButton()
+    }
+    table{
+      tr{
+        // display: flex;
+        td{
+          vertical-align: middle; 
+          text-align: center;
+        }
+      }
+    }
+  }
+  .workflowStats{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    img{
+      background-color: #f4f7fe;
+      border-radius: 50%;
+      object-fit: contain;
+      padding: 10px;
+      margin-right: 20px;
+    }
+    .textStats{
+      flex-grow: 1;
+      p{
+        margin-bottom: 0;
+      }
+      .firstPara{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+      }
+      .valuePara{
+        color: #1B2559;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .cardWorkflowSpace {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
   }
 }

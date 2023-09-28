@@ -92,6 +92,11 @@ export const Sidebar = () => {
                                 <LiaListAltSolid className='sideIcon' /><span>Complliance</span>
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.WORKFLOW} onClick={closeMobileButton}>
+                                <PiTruckLight className='sideIcon' /><span>Workflow</span>
+                            </NavLink>
+                        </li>
                         {/* <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMMUNICATION} onClick={closeMobileButton}>
@@ -150,7 +155,7 @@ export const Sidebar = () => {
                     </ul>
                 </div>
             </aside>
-            {isLogoutModalOpen && (
+            {/* {isLogoutModalOpen && (
                 <dialog id='modalLogout' className='modalLogout' open>
                     <div className="modalLogoutMain">
 
@@ -165,7 +170,7 @@ export const Sidebar = () => {
                     </div>
 
                 </dialog>
-            )}
+            )} */}
         </>
     )
 }

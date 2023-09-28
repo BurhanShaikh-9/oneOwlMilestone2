@@ -20,6 +20,7 @@ import { DashboardAgent } from './Website/pages/DashbordAgent/dashboardAgent';
 import { Service } from './Website/pages/Service/service';
 import { Performance } from './Website/pages/Performance/performance';
 import { Compliance } from './Website/pages/compliance/compliance';
+import { Workflow } from './Website/pages/workflow/workflow';
 
 
 
@@ -43,6 +44,7 @@ function App() {
           <Route path={ROUTES.SERVICE} element={<Service/>}/>
           <Route path={ROUTES.PERFORMANCE} element={<Performance />} />
           <Route path={ROUTES.COMPLIANCE} element={<Compliance />} />
+          <Route path={ROUTES.WORKFLOW} element={<Workflow />} />
         </Route>
       </Routes>
     </React.Fragment>

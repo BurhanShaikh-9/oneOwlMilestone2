@@ -1863,6 +1863,11 @@ header .headerInner .menuButton svg {
   color: grey;
   font-weight: 400;
 }
+.chartHeading2 .chartHeading2InnerFifth {
+  color: #0B2360;
+  font-size: 44px;
+  font-weight: 500;
+}
 
 .AgentApp {
   margin-bottom: 40px;
@@ -2168,4 +2173,126 @@ header .headerInner .menuButton svg {
 .AgentApp .containerGraphCompliance .percentage {
   font-size: 24px;
   font-weight: 700;
+}
+.AgentApp .checkBoxSlider {
+  margin-right: 30px;
+  display: flex;
+  gap: 10px;
+  /* Hide default HTML checkbox */
+  /* The slider */
+  /* Rounded sliders */
+}
+.AgentApp .checkBoxSlider p {
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 20px;
+  font-weight: 500;
+}
+.AgentApp .checkBoxSlider .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 29px;
+}
+.AgentApp .checkBoxSlider .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.AgentApp .checkBoxSlider .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #ccc;
+  transition: 0.4s;
+}
+.AgentApp .checkBoxSlider .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 13px;
+  bottom: -8.5px;
+  transform: translate(-50%, -50%);
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.AgentApp .checkBoxSlider input:checked + .slider {
+  background-color: #0B2360;
+  border: 3px solid transparent;
+}
+.AgentApp .checkBoxSlider input:focus + .slider {
+  box-shadow: 0 0 1px #0B2360;
+}
+.AgentApp .checkBoxSlider input:checked + .slider:before {
+  background-color: white;
+  transform: translate(18px, -10px);
+}
+.AgentApp .checkBoxSlider .slider.round {
+  border-radius: 34px;
+}
+.AgentApp .checkBoxSlider .slider.round:before {
+  border-radius: 50%;
+}
+.AgentApp .workflowTable {
+  margin-top: 30px;
+}
+.AgentApp .workflowTable select {
+  border: 1px solid white;
+}
+.AgentApp .workflowTable .workFlowButtonTheme {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  transition: all 0.1 ease-in;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+.AgentApp .workflowTable .workFlowButtonTheme:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.AgentApp .workflowTable table tr td {
+  vertical-align: middle;
+  text-align: center;
+}
+.AgentApp .workflowStats {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+}
+.AgentApp .workflowStats img {
+  background-color: #f4f7fe;
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+  margin-right: 20px;
+}
+.AgentApp .workflowStats .textStats {
+  flex-grow: 1;
+}
+.AgentApp .workflowStats .textStats p {
+  margin-bottom: 0;
+}
+.AgentApp .workflowStats .textStats .firstPara {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+.AgentApp .workflowStats .textStats .valuePara {
+  color: #1B2559;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+}
+.AgentApp .cardWorkflowSpace {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }/*# sourceMappingURL=App.css.map */
