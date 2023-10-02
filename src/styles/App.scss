@@ -1921,6 +1921,16 @@ header {
         }
       }
 
+      .communicationMsgBody{
+        margin-top: 10px;
+        margin-left: 10px;
+        height: 200px;
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+        .message{
+
+        }
+      }
       .communicationHeader {
         height: 50px;
         background-color: $base-color;
@@ -1945,9 +1955,16 @@ header {
         }
 
         .communicationControls {
+          button {
+            background-color: transparent;
+            outline: none;
+            border: none;
+          }
+
           svg {
             font-size: 19px;
             margin-right: 24px;
+            color: white;
           }
         }
       }
@@ -2091,6 +2108,19 @@ header {
     a {
       color: $base-color2;
     }
+  }
+}
+
+.callDialogBoxOuter {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+outline: none;
+border: none;
+  .callDialogBox {
+
   }
 }
 
@@ -2867,47 +2897,58 @@ header {
       border-radius: 50%;
     }
   }
-  .workflowTable{
+
+  .workflowTable {
     margin-top: 30px;
-    select{
+
+    select {
       border: 1px solid white;
     }
-    .workFlowButtonTheme{
+
+    .workFlowButtonTheme {
       @include themeBlueButton()
     }
-    table{
-      tr{
+
+    table {
+      tr {
+
         // display: flex;
-        td{
-          vertical-align: middle; 
+        td {
+          vertical-align: middle;
           text-align: center;
         }
       }
     }
   }
-  .workflowStats{
+
+  .workflowStats {
     display: flex;
     justify-content: flex-start;
     gap: 10px;
     align-items: center;
-    img{
+
+    img {
       background-color: #f4f7fe;
       border-radius: 50%;
       object-fit: contain;
       padding: 10px;
       margin-right: 20px;
     }
-    .textStats{
+
+    .textStats {
       flex-grow: 1;
-      p{
+
+      p {
         margin-bottom: 0;
       }
-      .firstPara{
+
+      .firstPara {
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
       }
-      .valuePara{
+
+      .valuePara {
         color: #1B2559;
         font-size: 36px;
         font-style: normal;

@@ -8,6 +8,7 @@ import ProfileImg from '../../../assets/images/guy.png'
 import { PiPaperPlaneTiltBold } from 'react-icons/pi'
 import { FaVideo, FaFacebook, FaWhatsapp } from 'react-icons/fa'
 import { AiFillTwitterCircle } from 'react-icons/ai'
+import { CallFunctionality } from '../../components/callFunctionality';
 
 
 const Communication = () => {
@@ -63,27 +64,8 @@ const Communication = () => {
                     <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                         <div className="card cardMargin">
                             <div className="card-body">
-                                <div className="CommunicationComponent">
-                                    <div className='communicationHeader'>
-                                        <div className="communicationAbout">
-                                            <img src={ProfileImg} alt="" />
-                                            <span>{selectedAgent || 'Agent Name'}</span>
-                                        </div>
-                                        <div className="communicationControls">
-                                            <BsTelephoneFill />
-                                            <FaVideo />
-                                        </div>
-                                    </div>
-
-                                    <div className='communicationChat'>
-                                        <input type="text" placeholder='Start Conversation...' />
-                                        <button className='sendChatButton'>
-                                            <PiPaperPlaneTiltBold />
-                                        </button>
-                                    </div>
-
-
-                                </div>
+                            
+                            <CallFunctionality/>
 
                             </div>
                         </div>

@@ -21,6 +21,7 @@ import { Service } from './Website/pages/Service/service';
 import { Performance } from './Website/pages/Performance/performance';
 import { Compliance } from './Website/pages/compliance/compliance';
 import { Workflow } from './Website/pages/workflow/workflow';
+import Demo from './Website/components/callComponent';
 
 
 
@@ -39,6 +40,8 @@ function App() {
           <Route path={ROUTES.SETTINGS} element={<Settings />} />
           <Route path={ROUTES.PROFILE} element={<Profile />} />
           <Route path={ROUTES.PRIVACY} element={<Privacy />} />
+          
+          <Route path="call-component" element={<Demo/> } />
           
           <Route path={ROUTES.DASHBOARD_AGENT} element={<DashboardAgent/>}/>
           <Route path={ROUTES.SERVICE} element={<Service/>}/>

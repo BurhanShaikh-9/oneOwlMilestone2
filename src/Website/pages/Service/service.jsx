@@ -5,6 +5,7 @@ import { BsTelephoneFill } from 'react-icons/bs'
 import { PiPaperPlaneTiltBold } from 'react-icons/pi'
 import { FaFacebook, FaVideo, FaWhatsapp } from 'react-icons/fa'
 import { AiFillPlusCircle, AiFillTwitterCircle } from 'react-icons/ai'
+import  {CallFunctionality}  from '../../components/callFunctionality'
 
 export const Service = () => {
     return (
@@ -35,27 +36,9 @@ export const Service = () => {
                             <div className="col-12">
                                 <div className="card cardMargin">
                                     <div className="card-body">
-                                        <div className="CommunicationComponent">
-                                            <div className='communicationHeader'>
-                                                <div className="communicationAbout">
-                                                    <img src={agentImg} alt="" />
-                                                    <span>Agent Name</span>
-                                                </div>
-                                                <div className="communicationControls">
-                                                    <BsTelephoneFill />
-                                                    <FaVideo />
-                                                </div>
-                                            </div>
+                                     
+                                     <CallFunctionality/>
 
-                                            <div className='communicationChat'>
-                                                <input type="text" placeholder='Start Conversation...' />
-                                                <button className='sendChatButton'>
-                                                    <PiPaperPlaneTiltBold />
-                                                </button>
-                                            </div>
-
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>

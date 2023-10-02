@@ -1539,6 +1539,13 @@ header .headerInner .menuButton svg {
   position: absolute;
   right: 0;
 }
+.mainSection .mainSectionInner .CommunicationComponent .communicationMsgBody {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 200px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
 .mainSection .mainSectionInner .CommunicationComponent .communicationHeader {
   height: 50px;
   background-color: #0B2360;
@@ -1558,9 +1565,15 @@ header .headerInner .menuButton svg {
 .mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationAbout span {
   font-size: 12px;
 }
+.mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationControls button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
 .mainSection .mainSectionInner .CommunicationComponent .communicationHeader .communicationControls svg {
   font-size: 19px;
   margin-right: 24px;
+  color: white;
 }
 .mainSection .mainSectionInner .statsRowLast {
   height: 113px !important;
@@ -1667,6 +1680,15 @@ header .headerInner .menuButton svg {
   color: white;
 }
 
+.callDialogBoxOuter {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  outline: none;
+  border: none;
+}
 .headerDark .headerInner {
   background-color: #464255;
 }

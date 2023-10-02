@@ -97,7 +97,8 @@ export const Sidebar = () => {
                                 <PiTruckLight className='sideIcon' /><span>Workflow</span>
                             </NavLink>
                         </li>
-                        {/* <li className="nav-item">
+                        {/* 
+                        <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMMUNICATION} onClick={closeMobileButton}>
                                 <PiArrowSquareDown className='sideIcon' /><span>Communication</span>
