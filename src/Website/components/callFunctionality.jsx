@@ -215,6 +215,13 @@ export const CallFunctionality = () => {
             setMessage(' ')
         }
     }
+    const toggleVideo = () => {
+        const localStream = session.connection.getLocalStreams()[0];
+        const videoTrack = localStream.getVideoTracks()[0];
+        if (videoTrack) {
+            videoTrack.enabled = !videoTrack.enabled;
+        }
+    };
 
 
     return (
@@ -306,6 +313,7 @@ export const CallFunctionality = () => {
                             </div>
                             &nbsp;
                             <Button onClick={handleIncomingCallReject}>Reject</Button>
+                            <Button onClick={toggleVideo}>Toggle Video</Button>
                         </Row>
                         <Row>
                             <video id="selfViewer" width={400} height={400} />
