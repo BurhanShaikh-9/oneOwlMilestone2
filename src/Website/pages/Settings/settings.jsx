@@ -32,9 +32,6 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
                     <div className="headingMainCon">
                         <h3>Settings</h3>
                     </div>
-
-
-
                     <div className="mainListComp settingsListComp">
                         <div className="mainHeadingWrapper">
                             <div className="mainListHeading">
