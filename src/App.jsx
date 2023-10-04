@@ -25,6 +25,7 @@ import { Workflow } from './Website/pages/workflow/workflow';
 import { UserNameContext, ThemeContext } from './services/contextFile';
 import { DarkMode } from './services/darkMode';
 import ReactGA from "react-ga4";
+import { AdminCompliance } from './Website/pages/adminCompliance/adminCompliance';
 
 const TRACKING_ID = "G-3L133H7SGZ"
 ReactGA.initialize(TRACKING_ID);
@@ -95,6 +96,10 @@ function App() {
           <Route path={ROUTES.PERFORMANCE} element={<Performance />} onEnter={() => trackEvent('pageview', 'Performance View', 'Performance')} />
           <Route path={ROUTES.COMPLIANCE} element={<Compliance />} onEnter={() => trackEvent('pageview', 'Compliance View', 'Compliance')} />
           <Route path={ROUTES.WORKFLOW} element={<Workflow />} onEnter={() => trackEvent('pageview', 'Workflow View', 'Workflow')} />
+       
+          <Route path={ROUTES.ADMINCOMPLIANCE} element={<AdminCompliance />} onEnter={() => trackEvent('pageview', 'AdminCompliance View', 'AdminCompliance')} />
+       
+       
         </Route>
       </Routes>
     </React.Fragment>

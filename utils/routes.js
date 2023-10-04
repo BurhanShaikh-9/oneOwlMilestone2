@@ -12,6 +12,7 @@ export const ROUTES = {
     PRIVACY: "privacy",
     PERFORMANCE: "performance",
     COMPLIANCE: "compliance",
+    ADMINCOMPLIANCE: "admin-compliance",
     WORKFLOW: "workflow",
 
 }

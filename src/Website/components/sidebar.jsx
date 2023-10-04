@@ -67,11 +67,9 @@ export const Sidebar = () => {
                         <button onClick={closeButton}><RxCross2 /></button>
                     </div>
                     <ul className="sidebar-nav" id="sidebar-nav">
-                        {/* <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD} onClick={closeMobileButton}>
-                                <GoHome className='sideIcon' /><span>Dashboard</span>
-                            </NavLink>
-                        </li> */}
+
+                        {/* AGENT MENUS  */}
+
                         <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD_AGENT} onClick={closeMobileButton}>
                                 <GoHome className='sideIcon' /><span>Dashboard</span>
@@ -97,7 +95,14 @@ export const Sidebar = () => {
                                 <PiTruckLight className='sideIcon' /><span>Workflow</span>
                             </NavLink>
                         </li>
-                        {/* 
+
+                        {/* CUSTOMER MENUS  */}
+
+                        {/* <li className="nav-item">
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD} onClick={closeMobileButton}>
+                                <GoHome className='sideIcon' /><span>Dashboard</span>
+                            </NavLink>
+                        </li> 
                         <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMMUNICATION} onClick={closeMobileButton}>
@@ -116,12 +121,24 @@ export const Sidebar = () => {
                                 <LiaListAltSolid className='sideIcon' /><span>Billing</span>
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        */}
 
+
+                        {/* ADMIN MENU  */}
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.ADMINCOMPLIANCE}>
+                                <LiaListAltSolid className='sideIcon' /><span>Compliance</span>
+                            </NavLink>
+                        </li>
+
+                        <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PRIVACY}>
                                 <PiTruckLight className='sideIcon' /><span>Data Privacy</span>
                             </NavLink>
-                        </li> */}
+                        </li>
+
+
                         <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PROFILE} onClick={closeMobileButton}>
