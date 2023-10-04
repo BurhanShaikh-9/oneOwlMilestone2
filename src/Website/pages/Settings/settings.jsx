@@ -1,10 +1,29 @@
 import React from 'react'
 import BodyComponent from '../../components/bodyComponent'
 import { DarkMode } from '../../../services/darkMode';
+import { SettingApi } from '../../../services/settings';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export const Settings = ({getThemeColor, isDarkMode}) => {
     const {setDarkMode, getDarkMode} = DarkMode(); 
     const darkMode = getDarkMode();
+
+    const {postSetting} = SettingApi();
+    const [getSettingData, setSettingData] = useState({
+        pushNotify:false, 
+        emailNotify: false,
+        themeNotify: false,
+        soundNotify:false
+    })
+    const getInput = (e) =>{
+        const { name, checked } = e.target;
+        setSettingData({...getSettingData, [name]: checked})
+    }
+    useEffect(()=>{
+
+        console.log(getSettingData, 'settingDataa');
+    },[getSettingData])
 
     return (
         <React.Fragment>
@@ -29,7 +48,7 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
                         </div>
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox" />
+                                <input type="checkbox" name='pushNotify' onChange={getInput} checked={getSettingData.pushNotify}/>
                                 <span className="slider round"></span>
                             </label>
                         </div>
@@ -47,7 +66,7 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
                         </div>
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox" />
+                                <input type="checkbox" name='emailNotify' onChange={getInput} checked={getSettingData.emailNotify}/>
                                 <span className="slider round"></span>
                             </label>
                         </div>
@@ -66,7 +85,7 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
                      
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox" checked={darkMode} onChange={(e)=>{getThemeColor(e.target.checked ? true : false), setDarkMode(e.target.checked ? true : false)}}/>
+                                <input type="checkbox" name='themeNotify' checked={darkMode || getSettingData.themeNotify}  onChange={(e)=>{getThemeColor(e.target.checked ? true : false), setDarkMode(e.target.checked ? true : false), getInput}}/>
                                 <span className="slider round"></span>
                             </label>
                         </div>
@@ -84,7 +103,7 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
                         </div>
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox" />
+                                <input type="checkbox" name='soundNotify' checked={getSettingData.soundNotify} onChange={getInput} />
                                 <span className="slider round"></span>
                             </label>
                         </div>
