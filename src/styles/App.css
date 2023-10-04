@@ -370,6 +370,11 @@ header .headerInner {
   position: fixed;
   z-index: 13;
 }
+header .headerInner .logoImage img {
+  width: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 header .headerInner .navRight {
   display: flex;
   justify-content: space-between;

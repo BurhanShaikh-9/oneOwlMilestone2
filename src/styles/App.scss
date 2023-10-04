@@ -483,6 +483,13 @@ header {
     width: 100%;
     position: fixed;
     z-index: 13;
+    .logoImage{
+      img{
+        width:100px;
+        
+        object-fit: contain;
+      }
+    }
 
     .navRight {
       display: flex;

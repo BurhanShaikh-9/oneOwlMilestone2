@@ -21,8 +21,18 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
         setSettingData({...getSettingData, [name]: checked})
     }
     useEffect(()=>{
+        const formData = new FormData();
+        formData.set('desktopPushNotification', getSettingData.pushNotify);
+        formData.set('emailNotification', getSettingData.emailNotify);
+        formData.set('darkTheme', getSettingData.themeNotify);
+        formData.set('soundNotification', getSettingData.soundNotify);
+        console.log(formData, 'settingDataa');
 
-        console.log(getSettingData, 'settingDataa');
+        postSetting(formData).then((res)=>{
+            console.log(res, 'response');
+        }).catch((res)=>{
+            console.log(res,'error');
+        })
     },[getSettingData])
 
     return (
