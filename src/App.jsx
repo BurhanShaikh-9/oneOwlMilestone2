@@ -27,6 +27,7 @@ import { DarkMode } from './services/darkMode';
 import ReactGA from "react-ga4";
 import { DashboardAdmin } from './Website/pages/AdminDashboard/dashboardAdmin';
 import { AdminCompliance } from './Website/pages/adminCompliance/adminCompliance';
+import { UserManagement } from './Website/pages/userManagement/userManagement';
 
 const TRACKING_ID = "G-3L133H7SGZ"
 ReactGA.initialize(TRACKING_ID);
@@ -100,9 +101,8 @@ function App() {
        
        
           <Route path={ROUTES.DASHBOARD_ADMIN} element={<DashboardAdmin />} onEnter={() => trackEvent('pageview', 'DashboardAdmin View', 'dashboardAdmin')} />
-        
-       
           <Route path={ROUTES.ADMINCOMPLIANCE} element={<AdminCompliance />} onEnter={() => trackEvent('pageview', 'AdminCompliance View', 'AdminCompliance')} />
+          <Route path={ROUTES.USER_MANAGEMENT} element={<UserManagement />} onEnter={() => trackEvent('pageview', 'UserManagement View', 'UserManagement')} />
        
        
         </Route>

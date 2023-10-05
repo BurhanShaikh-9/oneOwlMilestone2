@@ -70,7 +70,7 @@ export const Sidebar = () => {
 
                         {/* AGENT MENUS  */}
 
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD_AGENT} onClick={closeMobileButton}>
                                 <GoHome className='sideIcon' /><span>Dashboard</span>
                             </NavLink>
@@ -94,7 +94,7 @@ export const Sidebar = () => {
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.WORKFLOW} onClick={closeMobileButton}>
                                 <PiTruckLight className='sideIcon' /><span>Workflow</span>
                             </NavLink>
-                        </li>
+                        </li> */}
 
                         {/* CUSTOMER MENUS  */}
 
@@ -128,6 +128,16 @@ export const Sidebar = () => {
                         {/* ADMIN MENU  */}
 
                         <li className="nav-item">
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD_ADMIN} onClick={closeMobileButton}>
+                                <AiOutlineUser className='sideIcon' /><span>Dashboard</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.USER_MANAGEMENT} onClick={closeMobileButton}>
+                                <AiOutlineUser className='sideIcon' /><span>Management</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.ADMINCOMPLIANCE}>
                                 <LiaListAltSolid className='sideIcon' /><span>Compliance</span>
                             </NavLink>
@@ -140,7 +150,7 @@ export const Sidebar = () => {
                         </li>
 
 
-                        <li className="nav-item">
+                
 
 
 
@@ -148,11 +158,6 @@ export const Sidebar = () => {
 
 
 
-                        <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD_ADMIN} onClick={closeMobileButton}>
-                                <AiOutlineUser className='sideIcon' /><span>Dashboard</span>
-                            </NavLink>
-                        </li>
 
                         <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PROFILE} onClick={closeMobileButton}>

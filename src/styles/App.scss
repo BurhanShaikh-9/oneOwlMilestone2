@@ -486,7 +486,7 @@ header {
 
     .logoImage {
       img {
-        width: 100px;
+        width: 80px;
 
         object-fit: contain;
       }
@@ -1841,6 +1841,24 @@ header {
         }
       }
 
+      .actionButtons{
+        display: flex;
+        .green{
+          background-color: green;
+          color: white;
+          border: transparent;
+          padding: 7px 15px;
+          border-radius: 5px;
+          margin-right: 10px;
+        }
+        .delete{
+          background-color: #AD0000;
+          color: white;
+          border: transparent;
+          padding: 7px 15px;
+          border-radius: 5px;
+        }
+      }
       .privacyStatusCol {
         display: flex;
         align-items: center;
