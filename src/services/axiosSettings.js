@@ -1,20 +1,21 @@
 import React from 'react'
 import Base from './base';
 import axios from 'axios';
+import TokenService from './tokenService';
 // import TokenService from './tokenService';
 
 const AxiosSettings = () => {
     const { baseURL } = Base();
-    // const { userToken } = TokenService();
+    const { token } = TokenService();
 
 
     const axiosInstance = axios.create({
         url: baseURL,
         maxBodyLength: Infinity,
-        // headers: {
-        //     'Authorization': `Bearer ${userToken}`,
-        //     'Content-Type': 'application/json'
-        // },
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
     });
 
     axiosInstance.interceptors.request.use(

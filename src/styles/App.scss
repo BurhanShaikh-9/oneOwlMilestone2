@@ -484,6 +484,14 @@ header {
     position: fixed;
     z-index: 13;
 
+    .logoImage {
+      img {
+        width: 100px;
+
+        object-fit: contain;
+      }
+    }
+
     .navRight {
       display: flex;
       justify-content: space-between;
@@ -621,6 +629,56 @@ header {
 
     }
   }
+}
+
+.activityChange {
+  position: relative;
+
+  .activityChangeInner {
+    position: absolute;
+    bottom: -20px;
+    z-index: 999;
+    background-color: white;
+    padding: 5px;
+    .activityWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap:3px;
+      button{
+        background-color: transparent;
+        border: none;
+        margin-bottom: 0;
+        flex: 1;
+        text-align: left;
+      }
+
+      .activity {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #11D600;
+      }
+      .activityPause {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: yellow;
+      }
+      .activityStop {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: red;
+      }
+      .activityNotActive {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: grey;
+      }
+    }
+    }
 }
 
 .mainSection {
@@ -1211,7 +1269,14 @@ header {
   }
 
 
+  .activityChange {
+    position: relative;
 
+    .activityChangeInner {
+      position: absolute;
+      bottom: 0;
+    }
+  }
 
 
 
@@ -1795,6 +1860,15 @@ header {
           font-size: 18px;
         }
 
+        button {
+          color: $base-color;
+          border: none;
+          background-color: transparent;
+          margin-bottom: 0;
+          color: $base-color3;
+          font-size: 18px;
+        }
+
       }
 
       .iconsChannel {
@@ -1921,16 +1995,16 @@ header {
         }
       }
 
-      .communicationMsgBody{
+      .communicationMsgBody {
         margin-top: 10px;
         margin-left: 10px;
         height: 200px;
         overflow-y: auto;
         scrollbar-gutter: stable;
-        .message{
 
-        }
+        .message {}
       }
+
       .communicationHeader {
         height: 50px;
         background-color: $base-color;
@@ -2117,11 +2191,10 @@ header {
   left: 0;
   transform: translate(-50%, -50%);
   z-index: 99;
-outline: none;
-border: none;
-  .callDialogBox {
+  outline: none;
+  border: none;
 
-  }
+  .callDialogBox {}
 }
 
 

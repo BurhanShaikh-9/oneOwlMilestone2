@@ -370,6 +370,11 @@ header .headerInner {
   position: fixed;
   z-index: 13;
 }
+header .headerInner .logoImage img {
+  width: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 header .headerInner .navRight {
   display: flex;
   justify-content: space-between;
@@ -497,6 +502,54 @@ header .headerInner .menuButton svg {
 .modalLogout .modalLogoutMain .logoutButtons .noButton:active {
   scale: 0.98;
   opacity: 0.9;
+}
+
+.activityChange {
+  position: relative;
+}
+.activityChange .activityChangeInner {
+  position: absolute;
+  bottom: -20px;
+  z-index: 999;
+  background-color: white;
+  padding: 5px;
+}
+.activityChange .activityChangeInner .activityWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+}
+.activityChange .activityChangeInner .activityWrapper button {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 0;
+  flex: 1;
+  text-align: left;
+}
+.activityChange .activityChangeInner .activityWrapper .activity {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #11D600;
+}
+.activityChange .activityChangeInner .activityWrapper .activityPause {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: yellow;
+}
+.activityChange .activityChangeInner .activityWrapper .activityStop {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+}
+.activityChange .activityChangeInner .activityWrapper .activityNotActive {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: grey;
 }
 
 .mainSection {
@@ -1019,6 +1072,13 @@ header .headerInner .menuButton svg {
 .mainSection .billingTotal .topBilling .totalPara small {
   font-size: 11px;
 }
+.mainSection .activityChange {
+  position: relative;
+}
+.mainSection .activityChange .activityChangeInner {
+  position: absolute;
+  bottom: 0;
+}
 .mainSection .mainSectionInner {
   width: 100%;
 }
@@ -1452,6 +1512,14 @@ header .headerInner .menuButton svg {
   background-color: #11D600;
 }
 .mainSection .mainSectionInner .privacyTable .privacyStatusCol p {
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 18px;
+}
+.mainSection .mainSectionInner .privacyTable .privacyStatusCol button {
+  color: #0B2360;
+  border: none;
+  background-color: transparent;
   margin-bottom: 0;
   color: #5A5A5F;
   font-size: 18px;
