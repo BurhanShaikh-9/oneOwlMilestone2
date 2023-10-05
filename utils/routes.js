@@ -13,5 +13,6 @@ export const ROUTES = {
     PERFORMANCE: "performance",
     COMPLIANCE: "compliance",
     WORKFLOW: "workflow",
+    DASHBOARD_ADMIN: "dashboard",
 
 }
