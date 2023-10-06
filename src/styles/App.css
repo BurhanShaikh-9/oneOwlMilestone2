@@ -2403,4 +2403,8 @@ header .headerInner .menuButton svg {
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
+}
+
+.adminDashboardChart {
+  margin-top: 20px;
 }/*# sourceMappingURL=App.css.map */

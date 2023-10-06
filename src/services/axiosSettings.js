@@ -18,6 +18,8 @@ const AxiosSettings = () => {
         },
     });
 
+
+    
     axiosInstance.interceptors.request.use(
         async (config) => {
             // Fetch the token dynamically before sending the request

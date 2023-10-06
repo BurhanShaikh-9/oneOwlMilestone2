@@ -10,6 +10,7 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
     const darkMode = getDarkMode();
 
     const {postSetting} = SettingApi();
+    
     const [getSettingData, setSettingData] = useState({
         pushNotify:false, 
         emailNotify: false,
