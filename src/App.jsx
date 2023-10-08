@@ -28,6 +28,7 @@ import ReactGA from "react-ga4";
 import { DashboardAdmin } from './Website/pages/AdminDashboard/dashboardAdmin';
 import { AdminCompliance } from './Website/pages/adminCompliance/adminCompliance';
 import { UserManagement } from './Website/pages/userManagement/userManagement';
+import { Channel } from './Website/pages/channels/channel';
 
 const TRACKING_ID = "G-3L133H7SGZ"
 ReactGA.initialize(TRACKING_ID);
@@ -91,7 +92,6 @@ function App() {
           <Route path={ROUTES.NOTIFICATION} element={<Notification />} onEnter={() => trackEvent('pageview', 'pageview', 'Notification')} />
           <Route path={ROUTES.SETTINGS} element={<Settings getThemeColor={getThemeColor} />} onEnter={() => trackEvent('pageview', 'Settings View', 'Settings')} />
           <Route path={ROUTES.PROFILE} element={<Profile getUserNameVal={getUserNameVal} getUserLastVal={getUserLastVal} />} onEnter={() => trackEvent('pageview', 'Profile View', 'Profile')} />
-          <Route path={ROUTES.PRIVACY} element={<Privacy />} onEnter={() => trackEvent('pageview', 'Privacy View', 'Privacy')} />
 
           <Route path={ROUTES.DASHBOARD_AGENT} element={<DashboardAgent />} onEnter={() => trackEvent('pageview', 'DashboardAgent View', 'DashboardAgent')} />
           <Route path={ROUTES.SERVICE} element={<Service />} onEnter={() => trackEvent('pageview', 'Service View', 'Service')} />
@@ -102,7 +102,9 @@ function App() {
        
           <Route path={ROUTES.DASHBOARD_ADMIN} element={<DashboardAdmin />} onEnter={() => trackEvent('pageview', 'DashboardAdmin View', 'dashboardAdmin')} />
           <Route path={ROUTES.ADMINCOMPLIANCE} element={<AdminCompliance />} onEnter={() => trackEvent('pageview', 'AdminCompliance View', 'AdminCompliance')} />
+          <Route path={ROUTES.CHANNELS} element={<Channel />} onEnter={() => trackEvent('pageview', 'UserManagement View', 'UserManagement')} />
           <Route path={ROUTES.USER_MANAGEMENT} element={<UserManagement />} onEnter={() => trackEvent('pageview', 'UserManagement View', 'UserManagement')} />
+          <Route path={ROUTES.PRIVACY} element={<Privacy />} onEnter={() => trackEvent('pageview', 'Privacy View', 'Privacy')} />
        
        
         </Route>

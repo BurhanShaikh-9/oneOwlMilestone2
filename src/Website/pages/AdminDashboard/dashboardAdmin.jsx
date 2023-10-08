@@ -122,6 +122,33 @@ export const DashboardAdmin = () => {
         },
     };
     
+    const chartOptions = {
+        series: [100, 55, 20,20],
+        labels: ['United States', 'Canada', 'Mexico', 'Others'],
+        chart: {
+          type: 'donut',
+          toolbar: {
+            show: true,
+            tools: {
+              download: true,
+            },
+          },
+        },
+        colors: ['#95a4fc', '#baedbd', '#1c1c1c','#B1E3FF'],
+        legend: {
+          position: 'bottom'
+        },
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200,
+              },
+            },
+          },
+        ],
+      };
 
     return (
         <React.Fragment>
@@ -180,7 +207,7 @@ export const DashboardAdmin = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-12 col-lg-9 col-xl-9 ">
+                    <div className="col-md-12 col-lg-6 col-xl-6 ">
                         <div className="card">
                             <div className="card-body">
                                 <div className="chartHeading1">
@@ -188,6 +215,18 @@ export const DashboardAdmin = () => {
                                 </div>
                                 <ReactApexChart options={barChart} series={barChart.series} type="bar" height={300} />
 
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-12 col-lg-6 col-xl-6 ">
+                        <div className="card">
+                            <div className="card-body">
+                                <div className="chartHeading1">
+                                    <p>Traffic by Channels</p>
+                                </div>
+                                <div className='adminDashboardChart'>
+                                <ReactApexChart options={chartOptions} series={chartOptions.series} type="donut" height={330} />
+</div>
                             </div>
                         </div>
                     </div>

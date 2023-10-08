@@ -15,6 +15,7 @@ export const ROUTES = {
     ADMINCOMPLIANCE: "admin-compliance",
     WORKFLOW: "workflow",
     DASHBOARD_ADMIN: "dashboard",
-    USER_MANAGEMENT: 'user-management'
+    USER_MANAGEMENT: 'user-management',
+    CHANNELS: 'channels',
 
 }

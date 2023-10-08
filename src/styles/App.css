@@ -1510,7 +1510,17 @@ header .headerInner .menuButton svg {
   border-radius: 5px;
   margin-right: 10px;
 }
+.mainSection .mainSectionInner .privacyTable .actionButtons .editUser {
+  background-color: transparent;
+  color: rgb(175, 175, 175);
+  border: transparent;
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(175, 175, 175);
+  margin-right: 10px;
+}
 .mainSection .mainSectionInner .privacyTable .actionButtons .delete {
+  margin-right: 10px;
   background-color: #AD0000;
   color: white;
   border: transparent;
@@ -2428,4 +2438,56 @@ header .headerInner .menuButton svg {
 
 .adminDashboardChart {
   margin-top: 20px;
+}
+
+.chartHeading3 {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mainContactActivities {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 50px;
+}
+.mainContactActivities .contactActivityMain {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 260px;
+  max-width: 260px;
+  gap: 10px;
+}
+.mainContactActivities .contactActivityMain .contactContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.mainContactActivities .contactActivityMain .contactContainer img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainContactActivities .contactActivityMain .activityContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.mainContactActivities .contactActivityMain .activityContainer img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainContactActivities .contactActivityMain .activityContainer .activityInfo p {
+  margin-bottom: 0;
+}
+.mainContactActivities .contactActivityMain .activityContainer .activityInfo small {
+  color: rgb(184, 184, 184);
 }/*# sourceMappingURL=App.css.map */
