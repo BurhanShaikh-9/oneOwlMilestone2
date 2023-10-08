@@ -76,7 +76,7 @@ export const Sidebar = () => {
                             </NavLink>
                         </li>
 
-                        {/*
+                        
                         <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.SERVICE} onClick={closeMobileButton}>
                                 <PiArrowSquareDown className='sideIcon' /><span>Service</span>
@@ -97,12 +97,12 @@ export const Sidebar = () => {
                                 <PiTruckLight className='sideIcon' /><span>Workflow</span>
                             </NavLink>
                         </li> 
-                        */}
+                       
 
 
                         {/* CUSTOMER MENUS  */}
 
-                        {/*
+                    
                          <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD} onClick={closeMobileButton}>
                                 <GoHome className='sideIcon' /><span>Dashboard</span>
@@ -119,14 +119,14 @@ export const Sidebar = () => {
                                 <LiaEdit className='sideIcon' /><span>Preference</span>
                             </NavLink>
                         </li>
-                        {/* 
+                    
                         <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.BILLING} onClick={closeMobileButton}>
                                 <LiaListAltSolid className='sideIcon' /><span>Billing</span>
                             </NavLink>
                         </li>
-                        */}
+                    
 
 
                         {/* ADMIN MENU  */}

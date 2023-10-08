@@ -640,12 +640,14 @@ header {
     z-index: 999;
     background-color: white;
     padding: 5px;
+
     .activityWrapper {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      gap:3px;
-      button{
+      gap: 3px;
+
+      button {
         background-color: transparent;
         border: none;
         margin-bottom: 0;
@@ -659,18 +661,21 @@ header {
         border-radius: 50%;
         background-color: #11D600;
       }
+
       .activityPause {
         width: 10px;
         height: 10px;
         border-radius: 50%;
         background-color: yellow;
       }
+
       .activityStop {
         width: 10px;
         height: 10px;
         border-radius: 50%;
         background-color: red;
       }
+
       .activityNotActive {
         width: 10px;
         height: 10px;
@@ -678,7 +683,7 @@ header {
         background-color: grey;
       }
     }
-    }
+  }
 }
 
 .mainSection {
@@ -1841,9 +1846,10 @@ header {
         }
       }
 
-      .actionButtons{
+      .actionButtons {
         display: flex;
-        .green{
+
+        .green {
           background-color: green;
           color: white;
           border: transparent;
@@ -1851,7 +1857,8 @@ header {
           border-radius: 5px;
           margin-right: 10px;
         }
-        .delete{
+
+        .delete {
           background-color: #AD0000;
           color: white;
           border: transparent;
@@ -1859,6 +1866,7 @@ header {
           border-radius: 5px;
         }
       }
+
       .privacyStatusCol {
         display: flex;
         align-items: center;
@@ -3055,6 +3063,30 @@ header {
     flex-wrap: wrap;
   }
 }
-.adminDashboardChart{
+
+.adminTrafficMain {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  gap: 10px;
+  height: 295px;
+
+  .adminTrafficContain {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    span {
+      white-space: nowrap;
+      width: 72px;
+    }
+    progress{
+      accent-color: black;
+    }
+  }
+}
+
+.adminDashboardChart {
   margin-top: 20px;
 }

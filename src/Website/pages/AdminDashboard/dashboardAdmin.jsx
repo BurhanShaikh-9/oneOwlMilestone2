@@ -56,6 +56,73 @@ export const DashboardAdmin = () => {
         },
     };
 
+    const barChart = {
+        series: [{
+            name: 'Today',
+            data: [44, 55, 57, 56, 61, 58]
+        }],
+        chart: {
+            type: 'bar',
+            height: 350,
+            toolbar: {
+                show: false,
+            },
+        },
+        dataLabels: {
+            enabled: false
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '55%',
+                endingShape: 'rounded',
+                roundedBars: true,
+                colors: {
+                    ranges: [{
+                        from: 0,
+                        to: 44,
+                        color: '#95a4fc'
+                    }, {
+                        from: 45,
+                        to: 55,
+                        color: '#baedbd'
+                    }, {
+                        from: 56,
+                        to: 57,
+                        color: '#1c1c1c'
+                    }, {
+                        from: 58,
+                        to: 61,
+                        color: '#B1E3FF'
+                    }, {
+                        from: 62,
+                        to: 80,
+                        color: '#A8C5DA'
+                    },
+                    {
+                        from: 81,
+                        to: 100,
+                        color: '##A1E3CB'
+                    }
+                
+                ]
+                }
+            },
+        },
+        stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent']
+        },
+        xaxis: {
+            categories: ['Linux', 'Mac', 'IOS', 'Windows', 'Android', 'Other'],
+        },
+        yaxis: {
+            show: true
+        },
+    };
+    
+
     return (
         <React.Fragment>
             <BodyComponent>
@@ -64,24 +131,63 @@ export const DashboardAdmin = () => {
                     <div className="col-md-12 col-lg-9 col-xl-9 ">
                         <div className="card cardMargin darkModeCard">
                             <div className="card-body">
-                        
-                                    <div className="chartHeading1">
-                                        <p>Total Users</p>
-                                    </div>
-                    
+
+                                <div className="chartHeading1">
+                                    <p>Total Users</p>
+                                </div>
+
                             </div>
                             <div className='adminDashboardChart'>
 
-                                <ReactApexChart options={LineChart} series={LineChart.series} type="line" height={350} />
+                                <ReactApexChart options={LineChart} series={LineChart.series} type="line" height={300} />
                             </div>
                         </div>
                     </div>
                     <div className="col-md-12 col-lg-3 col-xl-3 ">
                         <div className="card">
                             <div className="card-body">
-                            <div className="chartHeading1">
-                                        <p>Total Users</p>
+                                <div className="chartHeading1">
+                                    <p>Traffic by Channels</p>
+                                </div>
+                                <div className="adminTrafficMain">
+
+                                    <div className='adminTrafficContain'>
+                                        <span>Live chat</span>
+                                        <progress max="100" value="50" />
                                     </div>
+                                    <div className='adminTrafficContain'>
+                                        <span>Whatsapp</span>
+                                        <progress max="100" value="50" />
+                                    </div>
+                                    <div className='adminTrafficContain'>
+                                        <span>Instagram</span>
+                                        <progress max="100" value="50" />
+                                    </div>
+                                    <div className='adminTrafficContain'>
+                                        <span>Email</span>
+                                        <progress max="100" value="50" />
+                                    </div>
+                                    <div className='adminTrafficContain'>
+                                        <span>Facebook</span>
+                                        <progress max="100" value="50" />
+                                    </div>
+                                    <div className='adminTrafficContain'>
+                                        <span>Twitter</span>
+                                        <progress max="100" value="50" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-12 col-lg-9 col-xl-9 ">
+                        <div className="card">
+                            <div className="card-body">
+                                <div className="chartHeading1">
+                                    <p>Traffic by Channels</p>
+                                </div>
+                                <ReactApexChart options={barChart} series={barChart.series} type="bar" height={300} />
+
                             </div>
                         </div>
                     </div>

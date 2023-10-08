@@ -2405,6 +2405,27 @@ header .headerInner .menuButton svg {
   flex-wrap: wrap;
 }
 
+.adminTrafficMain {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  gap: 10px;
+  height: 295px;
+}
+.adminTrafficMain .adminTrafficContain {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.adminTrafficMain .adminTrafficContain span {
+  white-space: nowrap;
+  width: 72px;
+}
+.adminTrafficMain .adminTrafficContain progress {
+  accent-color: black;
+}
+
 .adminDashboardChart {
   margin-top: 20px;
 }/*# sourceMappingURL=App.css.map */
