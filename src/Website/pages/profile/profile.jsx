@@ -7,9 +7,13 @@ import { AiFillPlusCircle, AiFillTwitterCircle, AiFillLinkedin } from 'react-ico
 import { SiFacebook } from 'react-icons/si'
 import { RiAddLine } from 'react-icons/ri'
 import { useEffect } from 'react'
+// import { generalApi } from '../../../services/generalApis/profile'
 
 
 export const Profile = ({ getUserNameVal, getUserLastVal }) => {
+
+    // const {putUpdateProfile} = generalApi();
+
     const [isHovered, setIsHovered] = useState(false);
     const [useProfileImg, setUserProfileImg] = useState('')
     const fileInputRef = useRef(null);
@@ -41,6 +45,10 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
     }
 
 
+    // const [useDataState, setUserDataState] = useState({
+
+    // })
+
     const onFormSubmit = (e) => {
         e.preventDefault()
         setFormSubmitted(true)
@@ -50,8 +58,6 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
         if (userData.phone) {
             setUserPhone(userData.phone)
         }
-
-
 
         if (UserNameState) {
             getUserNameVal(UserNameState)

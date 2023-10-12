@@ -7,17 +7,17 @@ export const PreferenceApi = () => {
     const { baseUrl } = Base();
     const { axiosInstance } = AxiosSettings()
 
-    const getUserNotification = (data) => {
-        return axiosInstance.get(`${baseUrl}/user/notification`, data);
+    const getUserNotification = () => {
+        return axiosInstance.get(`${baseUrl}/user/notification`);
     }
-    const getUserActivities = (data) => {
-        return axiosInstance.get(`${baseUrl}/user/activities`, data);
+    const getUserActivities = () => {
+        return axiosInstance.get(`${baseUrl}/user/activities`);
     }
-    const getUserConversations = (data) => {
-        return axiosInstance.get(`${baseUrl}/user/conversations?channel=all`, data);
+    const getUserConversations = () => {
+        return axiosInstance.get(`${baseUrl}/user/conversations?channel=all`);
     }
-    const getUserContacts = (data) => {
-        return axiosInstance.get(`${baseUrl}/user/contacts`, data);
+    const getUserContacts = () => {
+        return axiosInstance.get(`${baseUrl}/user/contacts`);
     }
 
 

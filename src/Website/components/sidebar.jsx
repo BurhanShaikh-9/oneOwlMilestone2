@@ -103,7 +103,7 @@ export const Sidebar = () => {
                         {/* CUSTOMER MENUS  */}
 
                     
-                         {/* <li className="nav-item">
+                         <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD} onClick={closeMobileButton}>
                                 <GoHome className='sideIcon' /><span>Dashboard</span>
                             </NavLink>
@@ -126,12 +126,12 @@ export const Sidebar = () => {
                                 <LiaListAltSolid className='sideIcon' /><span>Billing</span>
                             </NavLink>
                         </li>
-                     */}
+                    
 
 
                         {/* ADMIN MENU  */}
 
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD_ADMIN} onClick={closeMobileButton}>
                                 <AiOutlineUser className='sideIcon' /><span>Dashboard</span>
                             </NavLink>
@@ -156,7 +156,7 @@ export const Sidebar = () => {
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PRIVACY}>
                                 <PiTruckLight className='sideIcon' /><span>Data Privacy</span>
                             </NavLink>
-                        </li>
+                        </li> */}
 
 
                 
