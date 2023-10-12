@@ -1,6 +1,6 @@
 import React from 'react'
-import AxiosSettings from './axiosSettings';
-import Base from './base';
+import AxiosSettings from '../axiosSettings';
+import Base from '../base';
 
 export const SettingApi = () => {
 

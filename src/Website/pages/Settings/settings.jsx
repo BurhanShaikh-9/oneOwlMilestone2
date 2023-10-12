@@ -1,9 +1,9 @@
 import React from 'react'
 import BodyComponent from '../../components/bodyComponent'
 import { DarkMode } from '../../../services/darkMode';
-import { SettingApi } from '../../../services/settings';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { SettingApi } from '../../../services/generalApis/settings';
 
 export const Settings = ({getThemeColor, isDarkMode}) => {
     const {setDarkMode, getDarkMode} = DarkMode(); 

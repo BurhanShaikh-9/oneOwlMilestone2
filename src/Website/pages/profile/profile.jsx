@@ -7,12 +7,12 @@ import { AiFillPlusCircle, AiFillTwitterCircle, AiFillLinkedin } from 'react-ico
 import { SiFacebook } from 'react-icons/si'
 import { RiAddLine } from 'react-icons/ri'
 import { useEffect } from 'react'
-// import { generalApi } from '../../../services/generalApis/profile'
+import { generalApi } from '../../../services/generalApis/profile'
 
 
 export const Profile = ({ getUserNameVal, getUserLastVal }) => {
 
-    // const {putUpdateProfile} = generalApi();
+    const { putUpdateProfile } = generalApi();
 
     const [isHovered, setIsHovered] = useState(false);
     const [useProfileImg, setUserProfileImg] = useState('')
@@ -40,32 +40,9 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
     const [userEmail, setUserEmail] = useState('')
     const [userPhone, setUserPhone] = useState('')
 
-    const getInput = (e) => {
-        setUserData({ ...userData, [e.target.name]: e.target.value })
-    }
 
 
-    // const [useDataState, setUserDataState] = useState({
 
-    // })
-
-    const onFormSubmit = (e) => {
-        e.preventDefault()
-        setFormSubmitted(true)
-        if (userData.email) {
-            setUserEmail(userData.email)
-        }
-        if (userData.phone) {
-            setUserPhone(userData.phone)
-        }
-
-        if (UserNameState) {
-            getUserNameVal(UserNameState)
-        }
-        if (UserLastState) {
-            getUserLastVal(UserLastState)
-        }
-    }
 
 
 
@@ -96,34 +73,34 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
         setAddEmailVal({ ...addEmailVal, [e.target.name]: e.target.value })
     }
     const onClickEmail1 = () => {
-        if(emailRegex.test(addEmailVal.email1)){
+        if (emailRegex.test(addEmailVal.email1)) {
             setAddedEmail1(true);
             setremoveEmail(1)
-        }else{
+        } else {
             setEmail1Valid(false)
         }
     }
     const onClickEmail2 = () => {
-        if(emailRegex.test(addEmailVal.email2)){
+        if (emailRegex.test(addEmailVal.email2)) {
             setAddedEmail2(true);
             setremoveEmail(2)
-        }else{
+        } else {
             setEmail2Valid(false)
         }
     }
     const onClickEmail3 = () => {
-        if(emailRegex.test(addEmailVal.email3)){
+        if (emailRegex.test(addEmailVal.email3)) {
             setAddedEmail3(true);
             setremoveEmail(3)
-        }else{
+        } else {
             setEmail3Valid(false)
         }
     }
     const onClickEmail4 = () => {
-        if(emailRegex.test(addEmailVal.email4)){
+        if (emailRegex.test(addEmailVal.email4)) {
             setAddedEmail4(true);
             setremoveEmail(4)
-        }else{
+        } else {
             setEmail4Valid(false)
         }
     }
@@ -174,11 +151,46 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
     const [UserNameState, setUserNameState] = useState('');
     const [UserLastState, setUserLastState] = useState('');
 
+    const [useDataState, setUserDataState] = useState({
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone: ''
+    })
+
+    const getInput = (e) => {
+        setUserData({ ...userData, [e.target.name]: e.target.value })
+        setUserDataState({ ...useDataState, [e.target.name]: e.target.value })
+    }
+
+    const onFormSubmit = (e) => {
+        e.preventDefault()
+
+        putUpdateProfile(useDataState).then((res) => {
+            console.log(res, 'response');
+        }).catch((res)=>{
+            console.log(res, 'error');
+        })
 
 
 
 
+        
+        setFormSubmitted(true)
+        if (userData.email) {
+            setUserEmail(userData.email)
+        }
+        if (userData.phone) {
+            setUserPhone(userData.phone)
+        }
 
+        if (UserNameState) {
+            getUserNameVal(UserNameState)
+        }
+        if (UserLastState) {
+            getUserLastVal(UserLastState)
+        }
+    }
 
 
     return (
@@ -208,13 +220,13 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                                     <div className="formField">
                                         <label htmlFor="">First Name</label>
-                                        <input type="text" placeholder='First Name' onChange={(e) => { setUserNameState(e.target.value) }} />
+                                        <input type="text" name='firstname' placeholder='First Name' onChange={(e) => { getInput(e), setUserNameState(e.target.value) }} />
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                                     <div className="formField">
                                         <label htmlFor="">Last Name</label>
-                                        <input type="text" placeholder='Last Name' onChange={(e) => { setUserLastState(e.target.value) }} />
+                                        <input type="text" name='lastname' placeholder='Last Name' onChange={(e) => { getInput(e), setUserLastState(e.target.value) }} />
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
@@ -238,7 +250,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                                 (+1)
                                             </div>
                                         }
-                                        <input className={userNum && 'fieldAbsoluteInput'} type="number" placeholder='(+1) xxxxxxxx' name='phone' onChange={(e) => setUserNum(e.target.value)} />
+                                        <input className={userNum && 'fieldAbsoluteInput'} type="number" placeholder='(+1) xxxxxxxx' name='phone' onChange={(e) => { getInput(e), setUserNum(e.target.value) }} />
                                     </div>
                                 </div>
                                 {/* <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
@@ -273,7 +285,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
                                     <div className="formField">
-                                        <button>Save Changes</button>
+                                        <button type='submit '>Save Changes</button>
                                     </div>
                                 </div>
                             </form>

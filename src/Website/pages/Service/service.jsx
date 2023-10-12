@@ -5,9 +5,32 @@ import { BsTelephoneFill } from 'react-icons/bs'
 import { PiPaperPlaneTiltBold } from 'react-icons/pi'
 import { FaFacebook, FaVideo, FaWhatsapp } from 'react-icons/fa'
 import { AiFillPlusCircle, AiFillTwitterCircle } from 'react-icons/ai'
-import  {CallFunctionality}  from '../../components/callFunctionality'
+import { CallFunctionality } from '../../components/callFunctionality'
+import { ServiceApi } from '../../../services/agentApis/service'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 export const Service = () => {
+    const { getUserConversations, getUserConvoSummary } = ServiceApi();
+    const [conversationState, setConversationState] = useState([])
+    const [convoSummaryState, setConvoSummaryState] = useState([])
+
+    useEffect(()=>{
+        getUserConversations().then((res) => {
+            setConversationState(res?.data?.data)
+        }).catch((res) => {
+            console.log(res, 'error');
+        })
+    },[conversationState])
+    
+    useEffect(()=>{
+        getUserConvoSummary().then((res) => {
+            setConvoSummaryState(res?.data?.data)
+        }).catch((res) => {
+            console.log(res, 'error');
+        })
+    },[convoSummaryState])
+    
     return (
         <React.Fragment>
             <BodyComponent>
@@ -36,8 +59,8 @@ export const Service = () => {
                             <div className="col-12">
                                 <div className="card cardMargin">
                                     <div className="card-body">
-                                     
-                                     <CallFunctionality/>
+
+                                        <CallFunctionality />
 
                                     </div>
                                 </div>
