@@ -21,9 +21,9 @@ export const Header = (props) => {
   const { sideBar, setSideBar } = useContext(SidebarContext)
   // const {userLogout } = AuthService();
 
-  useEffect(() => {
-    console.log(sideBar, 'sidebarHeader');
-  }, [sideBar])
+  // useEffect(() => {
+  //   console.log(sideBar, 'sidebarHeader');
+  // }, [sideBar])
 
 
 

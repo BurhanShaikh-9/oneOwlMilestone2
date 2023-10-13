@@ -11,7 +11,7 @@ export const Layout = () => {
       setsideBar(!value);
     }
 
-    console.log(sideBar, 'sidebarlayout');
+    // console.log(sideBar, 'sidebarlayout');
     return (
         <React.Fragment>
             <SidebarContext.Provider value={{ sideBar: sideBar, setSideBar: setsideBar }}>
