@@ -18,18 +18,19 @@ export const Service = () => {
     useEffect(()=>{
         getUserConversations().then((res) => {
             setConversationState(res?.data?.data)
+            console.log(res, 'response');
         }).catch((res) => {
             console.log(res, 'error');
         })
-    },[conversationState])
+    },[])
     
     useEffect(()=>{
         getUserConvoSummary().then((res) => {
             setConvoSummaryState(res?.data?.data)
         }).catch((res) => {
-            console.log(res, 'error');
+            // console.log(res, 'error');
         })
-    },[convoSummaryState])
+    },[])
     
     return (
         <React.Fragment>

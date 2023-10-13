@@ -165,15 +165,15 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
 
     const onFormSubmit = (e) => {
         e.preventDefault()
-
+        console.log(useDataState, 'userData');
         putUpdateProfile(useDataState).then((res) => {
             console.log(res, 'response');
-        }).catch((res)=>{
+        }).catch((res) => {
             console.log(res, 'error');
         })
 
 
-        
+
         setFormSubmitted(true)
         if (userData.email) {
             setUserEmail(userData.email)

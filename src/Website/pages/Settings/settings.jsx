@@ -5,23 +5,26 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { SettingApi } from '../../../services/generalApis/settings';
 
-export const Settings = ({getThemeColor, isDarkMode}) => {
-    const {setDarkMode, getDarkMode} = DarkMode(); 
+export const Settings = ({ getThemeColor, isDarkMode }) => {
+    const { setDarkMode, getDarkMode } = DarkMode();
     const darkMode = getDarkMode();
 
-    const {postSetting} = SettingApi();
-    
+    const { postSetting } = SettingApi();
+
     const [getSettingData, setSettingData] = useState({
-        pushNotify:false, 
+        pushNotify: false,
         emailNotify: false,
         themeNotify: false,
-        soundNotify:false
+        soundNotify: false
     })
-    const getInput = (e) =>{
+    const getInput = (e) => {
         const { name, checked } = e.target;
-        setSettingData({...getSettingData, [name]: checked})
+        setSettingData({ ...getSettingData, [name]: checked })
     }
-    useEffect(()=>{
+    useEffect(() => {
+
+        console.log(getSettingData, 'settings Response');
+
         const formData = new FormData();
         formData.set('desktopPushNotification', getSettingData.pushNotify);
         formData.set('emailNotification', getSettingData.emailNotify);
@@ -29,12 +32,12 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
         formData.set('soundNotification', getSettingData.soundNotify);
         console.log(formData, 'settingDataa');
 
-        postSetting(formData).then((res)=>{
+        postSetting(formData).then((res) => {
             console.log(res, 'response');
-        }).catch((res)=>{
-            console.log(res,'error');
+        }).catch((res) => {
+            console.log(res, 'error');
         })
-    },[getSettingData])
+    }, [getSettingData])
 
     return (
         <React.Fragment>
@@ -56,7 +59,7 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
                         </div>
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox" name='pushNotify' onChange={getInput} checked={getSettingData.pushNotify}/>
+                                <input type="checkbox" name='pushNotify' onChange={getInput} checked={getSettingData.pushNotify} />
                                 <span className="slider round"></span>
                             </label>
                         </div>
@@ -74,7 +77,7 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
                         </div>
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox" name='emailNotify' onChange={getInput} checked={getSettingData.emailNotify}/>
+                                <input type="checkbox" name='emailNotify' onChange={getInput} checked={getSettingData.emailNotify} />
                                 <span className="slider round"></span>
                             </label>
                         </div>
@@ -83,17 +86,17 @@ export const Settings = ({getThemeColor, isDarkMode}) => {
                         <div className="mainHeadingWrapper">
                             <div className="mainListHeading">
                                 <h6>
-                                Dark Theme
+                                    Dark Theme
                                 </h6>
                             </div>
                             <div className="mainListPara">
-                            use the system settings to enable dark theme
+                                use the system settings to enable dark theme
                             </div>
                         </div>
-                     
+
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox" name='themeNotify' checked={darkMode || getSettingData.themeNotify}  onChange={(e)=>{getThemeColor(e.target.checked ? true : false), setDarkMode(e.target.checked ? true : false), getInput}}/>
+                                <input type="checkbox" name='themeNotify' checked={darkMode || getSettingData.themeNotify} onChange={(e) => { getThemeColor(e.target.checked ? true : false), setDarkMode(e.target.checked ? true : false), getInput }} />
                                 <span className="slider round"></span>
                             </label>
                         </div>

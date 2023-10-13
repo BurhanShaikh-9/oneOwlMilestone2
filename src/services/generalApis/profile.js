@@ -8,7 +8,7 @@ export const generalApi = () => {
     const { axiosInstance } = AxiosSettings()
 
     const putUpdateProfile = (data) => {
-        return axiosInstance.put(`${baseUrl}/user/notification`, data);
+        return axiosInstance.put(`${baseUrl}/user`, data);
     }
   
 
