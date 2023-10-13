@@ -29,6 +29,8 @@ import { DashboardAdmin } from './Website/pages/AdminDashboard/dashboardAdmin';
 import { AdminCompliance } from './Website/pages/adminCompliance/adminCompliance';
 import { UserManagement } from './Website/pages/userManagement/userManagement';
 import { Channel } from './Website/pages/channels/channel';
+import Login from './Website/pages/Auth/Login';
+import Signup from './Website/pages/Auth/Signup';
 
 const TRACKING_ID = "G-3L133H7SGZ"
 ReactGA.initialize(TRACKING_ID);
@@ -98,15 +100,16 @@ function App() {
           <Route path={ROUTES.PERFORMANCE} element={<Performance />} onEnter={() => trackEvent('pageview', 'Performance View', 'Performance')} />
           <Route path={ROUTES.COMPLIANCE} element={<Compliance />} onEnter={() => trackEvent('pageview', 'Compliance View', 'Compliance')} />
           <Route path={ROUTES.WORKFLOW} element={<Workflow />} onEnter={() => trackEvent('pageview', 'Workflow View', 'Workflow')} />
-       
-       
+
+
           <Route path={ROUTES.DASHBOARD_ADMIN} element={<DashboardAdmin />} onEnter={() => trackEvent('pageview', 'DashboardAdmin View', 'dashboardAdmin')} />
           <Route path={ROUTES.ADMINCOMPLIANCE} element={<AdminCompliance />} onEnter={() => trackEvent('pageview', 'AdminCompliance View', 'AdminCompliance')} />
           <Route path={ROUTES.CHANNELS} element={<Channel />} onEnter={() => trackEvent('pageview', 'UserManagement View', 'UserManagement')} />
           <Route path={ROUTES.USER_MANAGEMENT} element={<UserManagement />} onEnter={() => trackEvent('pageview', 'UserManagement View', 'UserManagement')} />
           <Route path={ROUTES.PRIVACY} element={<Privacy />} onEnter={() => trackEvent('pageview', 'Privacy View', 'Privacy')} />
-       
-       
+
+          <Route path={ROUTES.LOGIN} element={<Login />} />
+          <Route path={ROUTES.SIGNUP} element={<Signup />} />
         </Route>
       </Routes>
     </React.Fragment>

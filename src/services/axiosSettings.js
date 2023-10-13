@@ -9,6 +9,8 @@ const AxiosSettings = () => {
     const { token } = TokenService();
 
 
+    // console.log(token, 'tokennn');
+
     const axiosInstance = axios.create({
         url: baseURL,
         maxBodyLength: Infinity,
@@ -20,33 +22,33 @@ const AxiosSettings = () => {
 
 
     
-    axiosInstance.interceptors.request.use(
-        async (config) => {
-            // Fetch the token dynamically before sending the request
-            // const newToken = await fetchToken();
-            // config.headers['Authorization'] = `Bearer ${newToken}`;
-            return config;
-        },
-        (error) => {
-            return Promise.reject(error);
-        }
-    );
+    // axiosInstance.interceptors.request.use(
+    //     async (config) => {
+    //         // Fetch the token dynamically before sending the request
+    //         // const newToken = await fetchToken();
+    //         // config.headers['Authorization'] = `Bearer ${newToken}`;
+    //         return config;
+    //     },
+    //     (error) => {
+    //         return Promise.reject(error);
+    //     }
+    // );
 
-    // Add response interceptor
-    axiosInstance.interceptors.response.use(
-        (response) => {
-            // Process successful responses
-            return response;
-        },
-        (error) => {
-            // Handle response error
-            if (error.response.status === 401) {
+    // // Add response interceptor
+    // axiosInstance.interceptors.response.use(
+    //     (response) => {
+    //         // Process successful responses
+    //         return response;
+    //     },
+    //     (error) => {
+    //         // Handle response error
+    //         if (error.response.status === 401) {
                 
-                console.log('error in axios main');
-            }
-            return Promise.reject(error);
-        }
-    );
+    //             console.log('error in axios main');
+    //         }
+    //         return Promise.reject(error);
+    //     }
+    // );
     return { axiosInstance }
 }
 

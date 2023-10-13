@@ -173,8 +173,6 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
         })
 
 
-
-
         
         setFormSubmitted(true)
         if (userData.email) {

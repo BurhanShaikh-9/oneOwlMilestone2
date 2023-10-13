@@ -17,5 +17,7 @@ export const ROUTES = {
     DASHBOARD_ADMIN: "dashboard",
     USER_MANAGEMENT: 'user-management',
     CHANNELS: 'channels',
+    LOGIN:'login',
+    SIGNUP:'signup'
 
 }

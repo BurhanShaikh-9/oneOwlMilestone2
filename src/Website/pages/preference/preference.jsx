@@ -160,33 +160,36 @@ const Prefernce = () => {
             setActivities(res?.data)
             console.log(res, 'response');
         }).catch((res)=>{
-            console.log(res, 'error');
+            console.log(res.response.statusText, 'error');
+
         })
-    },[activities])
+    },[])
     useEffect(()=>{
         getUserNotification().then((res)=>{
             setNotification(res?.data)
             console.log(res, 'response');
         }).catch((res)=>{
-            console.log(res, 'error');
+            console.log(res.response.statusText, 'error');
         })
-    },[notification])
+    },[])
     useEffect(()=>{
         getUserConversations().then((res)=>{
             setConvoSummary(res?.data)
             console.log(res, 'response');
         }).catch((res)=>{
-            console.log(res, 'error');
+            console.log(res.response.statusText, 'error');
+
         })
-    },[convoSummary])
+    },[])
     useEffect(()=>{
         getUserContacts().then((res)=>{
             setUserContact(res?.data)
             console.log(res, 'response');
         }).catch((res)=>{
-            console.log(res, 'error');
+            console.log(res.response.statusText, 'error');
+
         })
-    },[userContact])
+    },[])
     return (
         <React.Fragment>
 
