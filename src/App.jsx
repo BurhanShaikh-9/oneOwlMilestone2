@@ -108,9 +108,9 @@ function App() {
           <Route path={ROUTES.USER_MANAGEMENT} element={<UserManagement />} onEnter={() => trackEvent('pageview', 'UserManagement View', 'UserManagement')} />
           <Route path={ROUTES.PRIVACY} element={<Privacy />} onEnter={() => trackEvent('pageview', 'Privacy View', 'Privacy')} />
 
-          <Route path={ROUTES.LOGIN} element={<Login />} />
-          <Route path={ROUTES.SIGNUP} element={<Signup />} />
         </Route>
+        <Route path={ROUTES.LOGIN} element={<Login />} />
+        <Route path={ROUTES.SIGNUP} element={<Signup />} />
       </Routes>
     </React.Fragment>
   )

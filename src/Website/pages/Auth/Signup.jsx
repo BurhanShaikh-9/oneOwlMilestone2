@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import {  useSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({
@@ -17,7 +17,9 @@ const Signup = () => {
     const { email, password } = credentials;
 
     if (!email || !password) {
-      enqueueSnackbar("Please fill in both email and password fields", { variant: "error" });
+      enqueueSnackbar("Please fill in both email and password fields", {
+        variant: "error",
+      });
 
       return;
     }
@@ -37,12 +39,21 @@ const Signup = () => {
       if (data.idToken) {
         localStorage.setItem("token", data.idToken);
         navigate("/dashboard");
-        enqueueSnackbar("User created successfully", { variant: "success" });
+        enqueueSnackbar("User created successfully", {
+          variant: "success",
+          autoHideDuration: 3000,
+        });
       } else {
-        enqueueSnackbar("Invalid credentials", { variant: "error" });
+        enqueueSnackbar("Invalid credentials", {
+          variant: "error",
+          autoHideDuration: 3000,
+        });
       }
     } catch (error) {
-      enqueueSnackbar("An error occurred", { variant: "error" });
+      enqueueSnackbar("An error occurred", {
+        variant: "error",
+        autoHideDuration: 3000,
+      });
     }
   };
 

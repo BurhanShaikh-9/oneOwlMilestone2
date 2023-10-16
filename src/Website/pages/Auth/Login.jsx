@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useSnackbar } from "notistack";
-import TokenService from '../../../services/tokenService';
+import TokenService from "../../../services/tokenService";
 const Login = () => {
   const [credentials, setCredentials] = useState({
     email: "",
@@ -17,7 +17,9 @@ const Login = () => {
     const { email, password } = credentials;
 
     if (!email || !password) {
-      enqueueSnackbar("Please fill in both email and password fields", { variant: "error" });
+      enqueueSnackbar("Please fill in both email and password fields", {
+        variant: "error",
+      });
       return;
     }
 
@@ -27,8 +29,8 @@ const Login = () => {
         {
           email: email,
           password: password,
-          clientType: 'CLIENT_TYPE_WEB',
-          returnSecureToken: true
+          clientType: "CLIENT_TYPE_WEB",
+          returnSecureToken: true,
         }
       );
 
@@ -37,13 +39,22 @@ const Login = () => {
       if (data.idToken) {
         TokenService().updateToken(data.idToken); // Update the token using TokenService
         navigate("/dashboard");
-        enqueueSnackbar("Logged in successfully", { variant: "success" });
+        enqueueSnackbar("Logged in successfully", {
+          variant: "success",
+          autoHideDuration: 3000,
+        });
       } else {
-        enqueueSnackbar("Invalid credentials", { variant: "error" });
+        enqueueSnackbar("Invalid credentials", {
+          variant: "error",
+          autoHideDuration: 3000,
+        });
       }
     } catch (error) {
-      enqueueSnackbar("An error occurred", { variant: "error" });
-      console.log(error, 'error');
+      enqueueSnackbar("An error occurred", {
+        variant: "error",
+        autoHideDuration: 3000,
+      });
+      console.log(error, "error");
     }
   };
 
